@@ -1,0 +1,2736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepkamal Motors | Hydraulic Seals & Industrial Parts | Bhopal</title>
+  <meta name="description" content="Bhopal's premier destination for Hydraulic Seals, Pneumatic Seals, Gear Parts, Cylinders, and Industrial Hydraulic Solutions. Serving Madhya Pradesh since 2004.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="deepkamal favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    /* -------------------------------------------------------------
+       CSS VARIABLES & RESET
+       ------------------------------------------------------------- */
+    :root {
+      --primary-navy: #042B65;
+      --accent-gold: #675434;
+      --light-gold: #B09E80;
+      --white: #FFFFFF;
+      --dark-bg: #0a1628;
+      --off-white: #f9f7f4;
+      
+      --font-headings: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+      
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: all 0.2s ease;
+      
+      --container-width: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--white);
+      color: #333333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-fast);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-headings);
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -------------------------------------------------------------
+       PRELOADER
+       ------------------------------------------------------------- */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--dark-bg);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .preloader-spinner {
+      width: 80px;
+      height: 80px;
+      border: 3px solid rgba(176, 158, 128, 0.15);
+      border-top: 3px solid var(--light-gold);
+      border-radius: 50%;
+      position: relative;
+      animation: spin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+    }
+
+    .preloader-spinner::before {
+      content: '\f013';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--light-gold);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      animation: spinReverse 3s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes spinReverse {
+      0% { transform: translate(-50%, -50%) rotate(360deg); }
+      100% { transform: translate(-50%, -50%) rotate(0deg); }
+    }
+
+    .preloader-text {
+      font-family: var(--font-headings);
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .preloader-text .navy-part {
+      color: var(--white);
+    }
+
+    .preloader-text .gold-part {
+      color: var(--light-gold);
+    }
+
+    /* -------------------------------------------------------------
+       UTILITIES & REVEAL ANIMATIONS
+       ------------------------------------------------------------- */
+    .section-padding {
+      padding: 100px 24px;
+    }
+
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .label-gold {
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--light-gold);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    /* Scroll Reveal CSS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* -------------------------------------------------------------
+       STICKY NAVIGATION BAR
+       ------------------------------------------------------------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: var(--transition-smooth);
+      background-color: rgba(4, 43, 101, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      
+      --logo-primary: #FFFFFF;
+      --logo-accent-gold: #B09E80;
+    }
+
+    header.scrolled {
+      padding: 12px 0;
+      background-color: var(--primary-navy);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border-bottom: 1px solid rgba(176, 158, 128, 0.15);
+      --logo-primary: #FFFFFF;
+      --logo-accent-gold: #B09E80;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 48px;
+    }
+
+    .logo-svg {
+      height: 100%;
+      width: auto;
+      max-width: 200px;
+    }
+
+    .logo-svg .aD6z1nYkhcolor {
+      fill: var(--logo-primary) !important;
+      transition: fill 0.3s ease;
+    }
+
+    .logo-svg .a6izo4zJpcolor,
+    .logo-svg .aLgOaV3zRcolors-0,
+    .logo-svg .aR9TavoXYfillColor,
+    .logo-svg .aMG-WEHroEfillColor,
+    .logo-svg .aR9TavoXYfillColor-floo {
+      fill: var(--logo-accent-gold) !important;
+      transition: fill 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--light-gold);
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--light-gold);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn-quote {
+      background-color: var(--accent-gold);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid var(--accent-gold);
+      box-shadow: 0 4px 15px rgba(103, 84, 52, 0.2);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      display: inline-block;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-quote::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      transition: 0.5s;
+      z-index: -1;
+    }
+
+    .btn-quote:hover::before {
+      left: 100%;
+    }
+
+    .btn-quote:hover {
+      background-color: #7d6741;
+      border-color: #7d6741;
+      box-shadow: 0 6px 20px rgba(103, 84, 52, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Hamburger & Mobile Nav Drawer */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      background-color: var(--primary-navy);
+      z-index: 999;
+      padding: 100px 40px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-drawer.open {
+      right: 0;
+    }
+
+    .mobile-drawer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mobile-drawer ul a {
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 500;
+      display: block;
+    }
+
+    .mobile-drawer ul a:hover {
+      color: var(--light-gold);
+    }
+
+    .mobile-drawer .btn-quote {
+      text-align: center;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    /* -------------------------------------------------------------
+       HERO SECTION
+       ------------------------------------------------------------- */
+    .hero {
+      height: 100vh;
+      min-height: 700px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-align: center;
+      padding: 0 24px;
+      overflow: hidden;
+    }
+
+    /* Slow Zoom Background Image */
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('hero_bg.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      z-index: 1;
+      animation: bgZoom 20s ease-out forwards;
+    }
+
+    @keyframes bgZoom {
+      from { transform: scale(1.15); }
+      to { transform: scale(1); }
+    }
+
+    /* Dark Overlay Mask for Contrast */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(4, 43, 101, 0.85) 0%, rgba(10, 22, 40, 0.95) 100%);
+      z-index: 2;
+    }
+
+    /* Glowing light blobs for premium lustre */
+    .hero-glow-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 3;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .blob-1 {
+      top: 15%;
+      left: 10%;
+      width: 400px;
+      height: 400px;
+      background-color: var(--light-gold);
+      animation: pulseGlow 10s infinite alternate;
+    }
+
+    .blob-2 {
+      bottom: 20%;
+      right: 15%;
+      width: 500px;
+      height: 500px;
+      background-color: #0b3fa8;
+      animation: pulseGlow 15s infinite alternate-reverse;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.15; }
+      100% { transform: scale(1.25) translate(40px, -30px); opacity: 0.25; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .hero-headline {
+      font-size: 4.5rem;
+      line-height: 1.15;
+      color: var(--white);
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+
+    .hero-subheadline {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 750px;
+      line-height: 1.6;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+      opacity: 0;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 20px;
+      margin-top: 16px;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+      opacity: 0;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-gold);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid var(--accent-gold);
+      box-shadow: 0 4px 20px rgba(103, 84, 52, 0.3);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-primary:hover {
+      background-color: #7d6741;
+      border-color: #7d6741;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(103, 84, 52, 0.5);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid var(--light-gold);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(176, 158, 128, 0.15);
+      border-color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .scroll-indicator i {
+      font-size: 1.2rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
+    }
+
+    /* -------------------------------------------------------------
+       ABOUT US SECTION
+       ------------------------------------------------------------- */
+    .about {
+      background-color: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .about-text p {
+      color: #555555;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .btn-download-about {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary-navy);
+      border: 2px solid var(--primary-navy);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 16px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-download-about:hover {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(4, 43, 101, 0.2);
+    }
+
+    /* Workshop Image Container */
+    .about-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-img-container {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(4, 43, 101, 0.1);
+      transition: var(--transition-smooth);
+    }
+
+    .about-img-container::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 100%;
+      height: 100%;
+      border: 3px solid var(--light-gold);
+      border-radius: 16px;
+      z-index: 1;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+
+    .about-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      position: relative;
+      z-index: 2;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .about-img-container:hover {
+      transform: translateY(-8px);
+    }
+
+    .about-img-container:hover::before {
+      transform: translate(8px, -8px);
+    }
+
+    .about-img-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background-color: var(--primary-navy);
+      color: var(--white);
+      padding: 16px 24px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 3;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border-left: 4px solid var(--light-gold);
+    }
+
+    .about-img-badge i {
+      font-size: 1.8rem;
+      color: var(--light-gold);
+    }
+
+    .about-img-badge .badge-title {
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .about-img-badge .badge-sub {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+
+    /* -------------------------------------------------------------
+       STATS STRIP
+       ------------------------------------------------------------- */
+    .stats-strip {
+      background-color: var(--dark-bg);
+      padding: 60px 24px;
+      border-top: 1px solid rgba(176, 158, 128, 0.15);
+      border-bottom: 1px solid rgba(176, 158, 128, 0.15);
+      position: relative;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: var(--container-width);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat-item {
+      position: relative;
+      padding: 10px 20px;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(176, 158, 128, 0.3), transparent);
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      color: var(--light-gold);
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+    }
+
+    /* -------------------------------------------------------------
+       PRODUCTS & SERVICES
+       ------------------------------------------------------------- */
+    .products {
+      background-color: var(--off-white);
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin: 0 auto 50px auto;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      margin-top: 8px;
+    }
+
+    /* Filter Category Tabs */
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background-color: var(--white);
+      border: 1px solid rgba(4, 43, 101, 0.12);
+      color: var(--primary-navy);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .tab-btn:hover {
+      background-color: var(--off-white);
+      border-color: var(--light-gold);
+    }
+
+    .tab-btn.active {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      border-color: var(--primary-navy);
+      box-shadow: 0 4px 15px rgba(4, 43, 101, 0.15);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .product-card {
+      background-color: var(--white);
+      padding: 40px 32px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+      border-left: 0px solid var(--accent-gold);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card.hidden {
+      display: none !important;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(176, 158, 128, 0.02) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .product-category-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--light-gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .product-icon-container {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(176, 158, 128, 0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: var(--accent-gold);
+      font-size: 1.6rem;
+      transition: var(--transition-smooth);
+    }
+
+    .product-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      color: var(--primary-navy);
+      transition: var(--transition-fast);
+    }
+
+    .product-card p {
+      color: #666666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    /* Product card hover effects */
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(4, 43, 101, 0.08);
+      border-left: 5px solid var(--accent-gold);
+    }
+
+    .product-card:hover .product-icon-container {
+      background-color: var(--accent-gold);
+      color: var(--white);
+      transform: scale(1.05);
+    }
+
+    .product-card:hover h3 {
+      color: var(--accent-gold);
+    }
+
+    .products-footer {
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-gold-brochure {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--accent-gold);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(103, 84, 52, 0.25);
+    }
+
+    .btn-gold-brochure:hover {
+      background-color: #7d6741;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(103, 84, 52, 0.4);
+    }
+
+    /* -------------------------------------------------------------
+       INDUSTRIES WE SERVE
+       ------------------------------------------------------------- */
+    .industries {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      position: relative;
+    }
+
+    .industries::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(rgba(176, 158, 128, 0.15) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+
+    .industries .section-header h2 {
+      color: var(--white);
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .industry-card {
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .industry-card i {
+      font-size: 2.2rem;
+      color: var(--light-gold);
+      transition: var(--transition-smooth);
+    }
+
+    .industry-card span {
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .industry-card:hover {
+      background-color: rgba(255, 255, 255, 0.07);
+      border-color: var(--light-gold);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(176, 158, 128, 0.15);
+    }
+
+    .industry-card:hover i {
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    /* -------------------------------------------------------------
+       OUR ESTEEMED CLIENTS (3x3 Grid Layout)
+       ------------------------------------------------------------- */
+    .clients {
+      background-color: var(--white);
+      position: relative;
+    }
+
+    .clients-subtext {
+      color: #666666;
+      font-size: 1.1rem;
+      margin-top: -8px;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .client-logo-card {
+      background-color: var(--off-white);
+      border: 1px solid rgba(4, 43, 101, 0.08);
+      border-radius: 12px;
+      height: 110px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+      transition: var(--transition-smooth);
+    }
+
+    .client-logo-card img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      filter: grayscale(10%) contrast(90%);
+      transition: var(--transition-smooth);
+    }
+
+    .client-logo-card:hover {
+      background-color: var(--white);
+      border-color: var(--light-gold);
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(4, 43, 101, 0.08);
+    }
+
+    .client-logo-card:hover img {
+      filter: none;
+    }
+
+    /* -------------------------------------------------------------
+       CONTACT ACTION BUTTONS (CTA STRIP)
+       ------------------------------------------------------------- */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-navy) 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -20%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(176, 158, 128, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      animation: pulseGlow 12s infinite alternate;
+    }
+
+    .cta-strip::after {
+      content: '';
+      position: absolute;
+      bottom: -40%; right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(4, 43, 101, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+      animation: pulseGlow 16s infinite alternate-reverse;
+    }
+
+    .cta-header {
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-header h2 {
+      font-size: 2.8rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .cta-header p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.1rem;
+    }
+
+    .cta-buttons-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .action-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: var(--transition-smooth);
+      border: none;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .action-btn i {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      transition: var(--transition-smooth);
+    }
+
+    .action-btn .btn-label {
+      font-size: 1.3rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+    }
+
+    .action-btn .btn-sub {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-family: var(--font-body);
+    }
+
+    .btn-call {
+      background-color: var(--accent-gold);
+      color: var(--white);
+    }
+
+    .btn-call:hover {
+      background-color: #7d6741;
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(103, 84, 52, 0.4);
+    }
+
+    .btn-email {
+      background-color: var(--white);
+      color: var(--primary-navy);
+    }
+
+    .btn-email:hover {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: var(--white);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebd58;
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+    }
+
+    .action-btn:hover i {
+      transform: scale(1.1);
+    }
+
+    /* -------------------------------------------------------------
+       CONTACT & FORM SECTION
+       ------------------------------------------------------------- */
+    .contact-section {
+      background-color: var(--off-white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-info h2 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+
+    .info-card {
+      background-color: var(--white);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+      border-left: 4px solid var(--accent-gold);
+      align-items: flex-start;
+    }
+
+    .info-icon-container {
+      font-size: 1.4rem;
+      color: var(--accent-gold);
+      background-color: rgba(176, 158, 128, 0.15);
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-content h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .info-content p {
+      color: #555555;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* B2B Inquiry Form */
+    .contact-form-container {
+      background-color: var(--white);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(4, 43, 101, 0.05);
+      border: 1px solid rgba(4, 43, 101, 0.05);
+    }
+
+    .form-title {
+      font-size: 1.6rem;
+      color: var(--primary-navy);
+      margin-bottom: 24px;
+      font-family: var(--font-body);
+      font-weight: 700;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #555555;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba(4, 43, 101, 0.15);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #333333;
+      background-color: var(--white);
+      transition: var(--transition-fast);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 3px rgba(103, 84, 52, 0.15);
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    /* -------------------------------------------------------------
+       DEDICATED MAP SECTION
+       ------------------------------------------------------------- */
+    .find-us {
+      background-color: var(--white);
+    }
+
+    .map-full-container {
+      width: 100%;
+      height: 450px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(4, 43, 101, 0.08);
+      border: 3px solid var(--light-gold);
+    }
+
+    .map-full-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* -------------------------------------------------------------
+       FOOTER
+       ------------------------------------------------------------- */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--white);
+      padding: 80px 24px 30px 24px;
+      border-top: 4px solid var(--accent-gold);
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      max-width: var(--container-width);
+      margin: 0 auto 50px auto;
+    }
+
+    .footer-col-branding {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-col-branding .logo-container {
+      height: 60px;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-headings);
+      font-size: 1.5rem;
+      color: var(--white);
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: 5px;
+    }
+
+    .footer-copyright {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 10px;
+    }
+
+    .footer-col h4 {
+      color: var(--light-gold);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-gold);
+      padding-left: 4px;
+    }
+
+    .footer-contact-snapshot {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-snapshot p {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .footer-contact-snapshot i {
+      color: var(--light-gold);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(176, 158, 128, 0.3), transparent);
+      margin-bottom: 24px;
+      border: none;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* -------------------------------------------------------------
+       RESPONSIVE STYLES
+       ------------------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .hero-headline {
+        font-size: 3.5rem;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 70px 20px;
+      }
+
+      /* Navbar */
+      .nav-links,
+      header .btn-quote {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      /* Hero */
+      .hero-headline {
+        font-size: 2.6rem;
+      }
+      .hero-subheadline {
+        font-size: 1.1rem;
+      }
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        gap: 12px;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* About */
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      .about-text h2 {
+        font-size: 2.2rem;
+      }
+      .about-img-container {
+        max-width: calc(100% - 20px);
+        margin: 0 0 0 20px;
+      }
+      .about-img-badge {
+        right: -10px;
+        bottom: -15px;
+      }
+
+      /* Stats */
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .stat-item {
+        padding: 10px 0;
+      }
+      .stat-item:nth-child(even)::after {
+        display: none;
+      }
+      .stat-number {
+        font-size: 2.8rem;
+      }
+
+      /* Products */
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      .category-tabs {
+        gap: 8px;
+      }
+      .tab-btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+      }
+
+      /* Industries */
+      .industries-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      /* Clients */
+      .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      /* CTA Strip */
+      .cta-buttons-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .cta-header h2 {
+        font-size: 2.2rem;
+      }
+
+      /* Contact & Form */
+      .info-card {
+        padding: 18px 16px;
+        gap: 16px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .contact-form-container {
+        padding: 28px 20px;
+      }
+      .contact-info h2 {
+        font-size: 2.2rem;
+      }
+      .map-full-container {
+        height: 320px;
+      }
+
+      /* Footer */
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .clients-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Thank You Message Styling */
+    .thank-you-container {
+      text-align: center;
+      padding: 40px 20px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: formFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .thank-you-icon {
+      font-size: 4.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      animation: scalePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .thank-you-title {
+      font-family: var(--font-headings);
+      font-size: 2.2rem;
+      color: var(--primary-navy);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .thank-you-text {
+      font-size: 1.05rem;
+      color: #555555;
+      line-height: 1.6;
+      max-width: 460px;
+      margin-bottom: 30px;
+    }
+
+    .btn-submit-another {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      border: 1px solid var(--primary-navy);
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 12px rgba(4, 43, 101, 0.15);
+    }
+
+    .btn-submit-another:hover {
+      background-color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(103, 84, 52, 0.25);
+    }
+
+    .btn-submit-another i {
+      transition: transform 0.4s ease;
+    }
+
+    .btn-submit-another:hover i {
+      transform: rotate(-180deg);
+    }
+
+    @keyframes scalePop {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes formFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- -----------------------------------------------------------
+       PAGE PRELOADER
+       ----------------------------------------------------------- -->
+  <div id="preloader">
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">
+      <span class="navy-part">DEEP KAMAL</span> <span class="gold-part">MOTORS</span>
+    </div>
+  </div>
+
+  <!-- -----------------------------------------------------------
+       STICKY NAVIGATION BAR
+       ----------------------------------------------------------- -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#hero" class="logo-container" aria-label="Deep Kamal Motors Home">
+        <!-- SVG Logo Inlined directly with custom property color mappings -->
+        <svg viewBox="0 0 380.2467 104.2479" width="380.2467" height="104.2479" class="logo-svg" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .a6izo4zJpcolor {fill:#675434;fill-opacity:1;}
+            .aD6z1nYkhcolor {fill:#042B65;fill-opacity:1;}
+            .aLgOaV3zRcolors-0 {fill:#675434;fill-opacity:0.98;}
+            .aMG-WEHroEfillColor {fill:#675434;fill-opacity:1;}
+            .aMG-WEHroEstrokeColor-str {stroke:#E9E9E9;stroke-opacity:1;}
+            .aR9TavoXYfillColor {fill:#675434;fill-opacity:1;}
+            .aR9TavoXYfillColor-floo {flood-color:#675434;flood-opacity:1;}
+            .shapeStroke-str {stroke:#E9E9E9;stroke-opacity:1;}
+            .text-floo {flood-color:#B09E80;flood-opacity:1;}
+          </style>
+          <g>
+            <g opacity="1" transform="rotate(0 69.96030000000002 88.99710000000002)">
+              <svg width="245.1884" height="15.2508" x="69.96030000000002" y="88.99710000000002" version="1.1" preserveAspectRatio="none" viewBox="0.16 -30.88 625.72 38.92">
+                <g transform="matrix(1 0 0 1 0 0)" class="a6izo4zJpcolor">
+                  <path d="M9.44 0L9.44-23.60L0.16-23.60L0.16-28L23.92-28L23.92-23.60L14.64-23.60L14.64 0L9.44 0Z M43.48-21.60Q47.52-21.60 49.96-19.24Q52.40-16.88 52.40-12.24L52.40-12.24L52.40 0L47.40 0L47.40-11.60Q47.40-14.40 46.08-15.82Q44.76-17.24 42.32-17.24L42.32-17.24Q39.56-17.24 37.96-15.58Q36.36-13.92 36.36-10.80L36.36-10.80L36.36 0L31.36 0L31.36-29.68L36.36-29.68L36.36-18.88Q37.60-20.20 39.42-20.90Q41.24-21.60 43.48-21.60L43.48-21.60Z M62.76 0L62.76-21.36L67.76-21.36L67.76 0L62.76 0ZM65.28-24.88Q63.92-24.88 63.00-25.74Q62.08-26.60 62.08-27.88L62.08-27.88Q62.08-29.16 63.00-30.02Q63.92-30.88 65.28-30.88L65.28-30.88Q66.64-30.88 67.56-30.06Q68.48-29.24 68.48-28L68.48-28Q68.48-26.68 67.58-25.78Q66.68-24.88 65.28-24.88L65.28-24.88Z M90.44-21.60Q94.48-21.60 96.92-19.24Q99.36-16.88 99.36-12.24L99.36-12.24L99.36 0L94.36 0L94.36-11.60Q94.36-14.40 93.04-15.82Q91.72-17.24 89.28-17.24L89.28-17.24Q86.52-17.24 84.92-15.58Q83.32-13.92 83.32-10.80L83.32-10.80L83.32 0L78.32 0L78.32-21.36L83.08-21.36L83.08-18.60Q84.32-20.08 86.20-20.84Q88.08-21.60 90.44-21.60L90.44-21.60Z M125.84 0L118.44-9.16L114.72-5.64L114.72 0L109.72 0L109.72-29.68L114.72-29.68L114.72-11.76L125.08-21.36L131.08-21.36L122.16-12.40L131.92 0L125.84 0Z M181.84-0.08L184.24 2.80Q182.84 4.44 180.98 5.28Q179.12 6.12 176.92 6.12L176.92 6.12Q174.04 6.12 171.64 4.82Q169.24 3.52 166.16 0.32L166.16 0.32Q162.28 0 159.20-1.94Q156.12-3.88 154.40-7.02Q152.68-10.16 152.68-14L152.68-14Q152.68-18.08 154.64-21.38Q156.60-24.68 160.04-26.54Q163.48-28.40 167.76-28.40L167.76-28.40Q172.04-28.40 175.48-26.54Q178.92-24.68 180.88-21.40Q182.84-18.12 182.84-14L182.84-14Q182.84-10.68 181.52-7.86Q180.20-5.04 177.84-3.06Q175.48-1.08 172.36-0.20L172.36-0.20Q173.52 1.04 174.64 1.60Q175.76 2.16 177.04 2.16L177.04 2.16Q179.80 2.16 181.84-0.08L181.84-0.08ZM157.92-14Q157.92-11.20 159.20-8.94Q160.48-6.68 162.72-5.42Q164.96-4.16 167.76-4.16L167.76-4.16Q170.56-4.16 172.80-5.42Q175.04-6.68 176.32-8.94Q177.60-11.20 177.60-14L177.60-14Q177.60-16.80 176.32-19.06Q175.04-21.32 172.80-22.58Q170.56-23.84 167.76-23.84L167.76-23.84Q164.96-23.84 162.72-22.58Q160.48-21.32 159.20-19.06Q157.92-16.80 157.92-14L157.92-14Z M207.56-21.36L212.56-21.36L212.56 0L207.80 0L207.80-2.72Q206.60-1.28 204.80-0.50Q203.00 0.28 200.92 0.28L200.92 0.28Q196.64 0.28 194.18-2.10Q191.72-4.48 191.72-9.16L191.72-9.16L191.72-21.36L196.72-21.36L196.72-9.84Q196.72-6.96 198.02-5.54Q199.32-4.12 201.72-4.12L201.72-4.12Q204.40-4.12 205.98-5.78Q207.56-7.44 207.56-10.56L207.56-10.56L207.56-21.36Z M231.28-21.60Q236.00-21.60 238.50-19.34Q241.00-17.08 241.00-12.52L241.00-12.52L241.00 0L236.28 0L236.28-2.60Q235.36-1.20 233.66-0.46Q231.96 0.28 229.56 0.28L229.56 0.28Q227.16 0.28 225.36-0.54Q223.56-1.36 222.58-2.82Q221.60-4.28 221.60-6.12L221.60-6.12Q221.60-9 223.74-10.74Q225.88-12.48 230.48-12.48L230.48-12.48L236.00-12.48L236.00-12.80Q236.00-15.04 234.66-16.24Q233.32-17.44 230.68-17.44L230.68-17.44Q228.88-17.44 227.14-16.88Q225.40-16.32 224.20-15.32L224.20-15.32L222.24-18.96Q223.92-20.24 226.28-20.92Q228.64-21.60 231.28-21.60L231.28-21.60ZM230.60-3.36Q232.48-3.36 233.94-4.22Q235.40-5.08 236.00-6.68L236.00-6.68L236.00-9.16L230.84-9.16Q226.52-9.16 226.52-6.32L226.52-6.32Q226.52-4.96 227.60-4.16Q228.68-3.36 230.60-3.36L230.60-3.36Z M251.40 0L251.40-29.68L256.40-29.68L256.40 0L251.40 0Z M266.96 0L266.96-21.36L271.96-21.36L271.96 0L266.96 0ZM269.48-24.88Q268.12-24.88 267.20-25.74Q266.28-26.60 266.28-27.88L266.28-27.88Q266.28-29.16 267.20-30.02Q268.12-30.88 269.48-30.88L269.48-30.88Q270.84-30.88 271.76-30.06Q272.68-29.24 272.68-28L272.68-28Q272.68-26.68 271.78-25.78Q270.88-24.88 269.48-24.88L269.48-24.88Z M293.96-4.72L295.36-1.16Q294.48-0.44 293.22-0.08Q291.96 0.28 290.56 0.28L290.56 0.28Q287.04 0.28 285.12-1.56Q283.20-3.40 283.20-6.92L283.20-6.92L283.20-17.20L279.68-17.20L279.68-21.20L283.20-21.20L283.20-26.08L288.20-26.08L288.20-21.20L293.92-21.20L293.92-17.20L288.20-17.20L288.20-7.04Q288.20-5.48 288.96-4.66Q289.72-3.84 291.16-3.84L291.16-3.84Q292.84-3.84 293.96-4.72L293.96-4.72Z M318.28-21.36L323.08-21.36L313.08 1.72Q311.68 5.20 309.68 6.62Q307.68 8.04 304.84 8.04L304.84 8.04Q303.24 8.04 301.68 7.52Q300.12 7 299.12 6.08L299.12 6.08L301.12 2.40Q301.84 3.08 302.82 3.48Q303.80 3.88 304.80 3.88L304.80 3.88Q306.12 3.88 306.98 3.20Q307.84 2.52 308.56 0.92L308.56 0.92L308.92 0.08L299.60-21.36L304.80-21.36L311.52-5.56L318.28-21.36Z M330.52-6.36Q331.92-6.36 332.84-5.44Q333.76-4.52 333.76-3.04L333.76-3.04Q333.76-2.40 333.58-1.70Q333.40-1 332.84 0.40L332.84 0.40L330.80 6.04L327.56 6.04L329.16-0.08Q328.28-0.44 327.78-1.22Q327.28-2 327.28-3.04L327.28-3.04Q327.28-4.52 328.20-5.44Q329.12-6.36 330.52-6.36L330.52-6.36Z M363.84 0L363.84-23.60L354.56-23.60L354.56-28L378.32-28L378.32-23.60L369.04-23.60L369.04 0L363.84 0Z M397.88-21.60Q401.92-21.60 404.36-19.24Q406.80-16.88 406.80-12.24L406.80-12.24L406.80 0L401.80 0L401.80-11.60Q401.80-14.40 400.48-15.82Q399.16-17.24 396.72-17.24L396.72-17.24Q393.96-17.24 392.36-15.58Q390.76-13.92 390.76-10.80L390.76-10.80L390.76 0L385.76 0L385.76-29.68L390.76-29.68L390.76-18.88Q392-20.20 393.82-20.90Q395.64-21.60 397.88-21.60L397.88-21.60Z M417.16 0L417.16-21.36L422.16-21.36L422.16 0L417.16 0ZM419.68-24.88Q418.32-24.88 417.40-25.74Q416.48-26.60 416.48-27.88L416.48-27.88Q416.48-29.16 417.40-30.02Q418.32-30.88 419.68-30.88L419.68-30.88Q421.04-30.88 421.96-30.06Q422.88-29.24 422.88-28L422.88-28Q422.88-26.68 421.98-25.78Q421.08-24.88 419.68-24.88L419.68-24.88Z M444.84-21.60Q448.88-21.60 451.32-19.24Q453.76-16.88 453.76-12.24L453.76-12.24L453.76 0L448.76 0L448.76-11.60Q448.76-14.40 447.44-15.82Q446.12-17.24 443.68-17.24L443.68-17.24Q440.92-17.24 439.32-15.58Q437.72-13.92 437.72-10.80L437.72-10.80L437.72 0L432.72 0L432.72-21.36L437.48-21.36L437.48-18.60Q438.72-20.08 440.60-20.84Q442.48-21.60 444.84-21.60L444.84-21.60Z M480.24 0L472.84-9.16L469.12-5.64L469.12 0L464.12 0L464.12-29.68L469.12-29.68L469.12-11.76L479.48-21.36L485.48-21.36L476.56-12.40L486.32 0L480.24 0Z M509.08 0L509.08-28L521.32-28Q525.80-28 529.28-26.26Q532.76-24.52 534.68-21.34Q536.60-18.16 536.60-14L536.60-14Q536.60-9.84 534.68-6.66Q532.76-3.48 529.28-1.74Q525.80 0 521.32 0L521.32 0L509.08 0ZM514.28-4.40L521.08-4.40Q524.16-4.40 526.50-5.58Q528.84-6.76 530.10-8.94Q531.36-11.12 531.36-14L531.36-14Q531.36-16.88 530.10-19.06Q528.84-21.24 526.50-22.42Q524.16-23.60 521.08-23.60L521.08-23.60L514.28-23.60L514.28-4.40Z M565.64 0L555.76-11.72L551.32-7.16L551.32 0L546.12 0L546.12-28L551.32-28L551.32-13.64L565.16-28L571-28L559.24-15.48L571.72 0L565.64 0Z M609.92 0L605 0L604.96-18.56L595.76-3.20L593.44-3.20L584.24-18.32L584.24 0L579.28 0L579.28-28L583.56-28L594.68-9.44L605.60-28L609.88-28L609.92 0Z M622.60 0.28Q621.24 0.28 620.28-0.66Q619.32-1.60 619.32-3.04L619.32-3.04Q619.32-4.52 620.26-5.44Q621.20-6.36 622.60-6.36L622.60-6.36Q624-6.36 624.94-5.44Q625.88-4.52 625.88-3.04L625.88-3.04Q625.88-1.60 624.92-0.66Q623.96 0.28 622.60 0.28L622.60 0.28Z" />
+                </g>
+              </svg>
+            </g>
+            <g opacity="1" transform="rotate(0 166.8395 0)">
+              <svg width="51.4298" height="48.676" x="166.8395" y="0" version="1.1" preserveAspectRatio="none" viewBox="0.805999755859375 4.5290021896362305 98.19700622558594 92.93900299072266">
+                <g transform="matrix(1 0 0 1 0 0)" class="aLgOaV3zRcolors-0">
+                  <g>
+                    <path d="M49.904,90.909C27.718,90.909,10.017,85,4.369,75H2.463c0,13,20.396,22.468,47.441,22.468   C76.951,97.468,97.348,88,97.348,75h-1.905C89.794,85,72.092,90.909,49.904,90.909z"></path>
+                    <path d="M5.23,40.323c0.193,0,0.377-0.032,0.563-0.057l-0.116,0.042c6.812,9.136,5.37,23.726,4.329,30.027   c0.862,2.524,3.72,5.132,8.091,7.356c0.715,0.363,1.468,0.718,2.262,1.059c1.104,0.476,2.267,0.916,3.473,1.331   c7.338,2.521,16.435,3.893,26.072,3.893c9.64,0,18.734-1.372,26.075-3.893c1.204-0.415,2.367-0.855,3.472-1.331   c0.793-0.341,1.546-0.695,2.262-1.059c4.372-2.225,7.229-4.832,8.091-7.356c-1.043-6.302-2.484-20.892,4.328-30.027l-0.116-0.042   c0.188,0.024,0.371,0.057,0.564,0.057c2.443,0,4.423-1.98,4.423-4.423c0-2.443-1.979-4.425-4.423-4.425   c-2.444,0-4.424,1.981-4.424,4.425c0,1.535,0.783,2.888,1.973,3.68l-0.216-0.078c0,0-2.424,12.396-9.99,14.615   c-7.569,2.221-7.872-10.579-7.872-17.744c0-5.889,0.137-11.43,0.184-13.218c0.069,0.004,0.138,0.011,0.208,0.011   c2.901,0,5.253-2.353,5.253-5.254s-2.352-5.253-5.253-5.253s-5.254,2.352-5.254,5.253c0,2.203,1.357,4.088,3.281,4.867   l-5.281,17.355c0,0-7.653,23.36-12.916-4.568c-2.506-13.3-3.116-18.026-3.223-19.709c2.688-0.463,4.737-2.799,4.737-5.621   c0-3.152-2.556-5.707-5.709-5.707c-0.059,0-0.115,0.007-0.174,0.009c-0.058-0.002-0.114-0.009-0.173-0.009   c-3.152,0-5.708,2.555-5.708,5.707c0,2.822,2.047,5.158,4.737,5.621c-0.106,1.683-0.718,6.409-3.224,19.709   c-5.263,27.929-12.915,4.568-12.915,4.568l-5.28-17.355c1.923-0.779,3.279-2.664,3.279-4.867c0-2.901-2.351-5.253-5.253-5.253   c-2.901,0-5.254,2.352-5.254,5.253s2.353,5.254,5.254,5.254c0.069,0,0.137-0.007,0.206-0.011c0.049,1.788,0.185,7.329,0.185,13.218   c0,7.165-0.303,19.965-7.87,17.744c-7.568-2.22-9.991-14.615-9.991-14.615L7.681,39.58c1.188-0.792,1.974-2.145,1.974-3.68   c0-2.443-1.981-4.425-4.424-4.425c-2.443,0-4.425,1.981-4.425,4.425C0.806,38.343,2.787,40.323,5.23,40.323z M15.965,68.355   c-0.646,0-1.174-0.526-1.174-1.174s0.527-1.174,1.174-1.174c0.648,0,1.174,0.526,1.174,1.174S16.613,68.355,15.965,68.355z    M21.049,71.581c-1.026,0-1.857-0.832-1.857-1.857s0.832-1.857,1.857-1.857s1.857,0.832,1.857,1.857S22.075,71.581,21.049,71.581z    M28.088,74.611c-1.188,0-2.151-0.963-2.151-2.15s0.964-2.15,2.151-2.15s2.149,0.963,2.149,2.15S29.275,74.611,28.088,74.611z    M37.374,78.287c-2.138,0-3.871-1.733-3.871-3.871c0-2.139,1.733-3.872,3.871-3.872s3.871,1.733,3.871,3.872   C41.245,76.554,39.512,78.287,37.374,78.287z M49.789,81.654c-3.512,0-6.359-2.848-6.359-6.358c0-3.512,2.848-6.359,6.359-6.359   s6.359,2.848,6.359,6.359C56.148,78.807,53.301,81.654,49.789,81.654z M62.204,78.287c-2.138,0-3.871-1.733-3.871-3.871   c0-2.139,1.733-3.872,3.871-3.872s3.872,1.733,3.872,3.872C66.076,76.554,64.342,78.287,62.204,78.287z M71.491,74.611   c-1.188,0-2.15-0.963-2.15-2.15s0.963-2.15,2.15-2.15s2.15,0.963,2.15,2.15S72.679,74.611,71.491,74.611z M78.53,71.581   c-1.026,0-1.858-0.832-1.858-1.857s0.832-1.857,1.858-1.857s1.857,0.832,1.857,1.857S79.557,71.581,78.53,71.581z M83.613,68.355   c-0.648,0-1.173-0.526-1.173-1.174s0.524-1.174,1.173-1.174c0.647,0,1.174,0.526,1.174,1.174S84.261,68.355,83.613,68.355z    M88.306,64.542c0,0.54-0.438,0.978-0.979,0.978c-0.539,0-0.977-0.438-0.977-0.978c0-0.539,0.438-0.978,0.977-0.978   C87.868,63.564,88.306,64.003,88.306,64.542z M13.899,55c0,6,18.976,10.087,36.005,10.087C66.935,65.087,85.909,61,85.909,55h1.815   c0,7-19.229,11.902-37.82,11.902C31.314,66.902,12.085,62,12.085,55H13.899z M12.251,63.564c0.539,0,0.978,0.438,0.978,0.978   c0,0.54-0.438,0.978-0.978,0.978c-0.54,0-0.979-0.438-0.979-0.978C11.272,64.003,11.711,63.564,12.251,63.564z"></path>
+                  </g>
+                </g>
+              </svg>
+            </g>
+            <g opacity="1" transform="rotate(0 228.49559999999997 38.623999999999995)">
+              <svg width="151.7511" height="1.6233" x="228.49559999999997" y="38.623999999999995" version="1.1" preserveAspectRatio="none" viewBox="0 0 151.7511 1.6233">
+                <rect x="0" y="0" width="151.7511" height="1.6233" class="aR9TavoXYfillColor shapeStroke-str" style="stroke-width:0;" rx="50%" ry="50%"></rect>
+              </svg>
+            </g>
+            <g opacity="1" transform="rotate(0 16.454499999999996 58.53189999999998)">
+              <svg width="352.2" height="19.4791" x="16.454499999999996" y="58.53189999999998" version="1.1" preserveAspectRatio="none" viewBox="1.76 -26.8 491.8 27.2">
+                <g transform="matrix(1 0 0 1 0 0)" class="aD6z1nYkhcolor"><path d="M15.12 0L1.76 0L1.76-0.64L5.16-2.28L5.16-24.12L1.76-25.76L1.76-26.40L15.40-26.40Q20.16-26.40 23.48-24.84Q26.80-23.28 28.54-20.56Q30.28-17.84 30.28-14.40L30.28-14.40Q30.28-11.28 29.14-8.64Q28-6 25.96-4.08Q23.92-2.16 21.16-1.08Q18.40 0 15.12 0L15.12 0ZM13.76-24.20L13.76-24.20L11.20-24.20L11.20-2.20L14.32-2.20Q18.96-2.20 21.48-5.18Q24-8.16 24-13.16L24-13.16Q24-18.20 21.42-21.20Q18.84-24.20 13.76-24.20Z M58.76 0L35.84 0L35.84-0.64L39.24-2.28L39.24-24.12L35.84-25.76L35.84-26.40L57.64-26.40L57.64-19.48L57-19.48L54.04-24.20L45.28-24.20L45.28-14.72L51.44-14.72L53.68-18.16L54.32-18.16L54.32-9.16L53.68-9.16L51.44-12.52L45.28-12.52L45.28-2.20L55-2.20L58.12-8.16L58.76-8.16L58.76 0Z M88 0L65.08 0L65.08-0.64L68.48-2.28L68.48-24.12L65.08-25.76L65.08-26.40L86.88-26.40L86.88-19.48L86.24-19.48L83.28-24.20L74.52-24.20L74.52-14.72L80.68-14.72L82.92-18.16L83.56-18.16L83.56-9.16L82.92-9.16L80.68-12.52L74.52-12.52L74.52-2.20L84.24-2.20L87.36-8.16L88-8.16L88 0Z M107.84 0L94.32 0L94.32-0.64L97.72-2.28L97.72-24.12L94.32-25.76L94.32-26.40L108.16-26.40Q112.88-26.40 115.74-24.70Q118.60-23 118.60-19.28L118.60-19.28Q118.60-17.04 117.10-15.34Q115.60-13.64 113.04-12.70Q110.48-11.76 107.20-11.76L107.20-11.76L103.76-11.76L103.76-2.28L107.84-0.64L107.84 0ZM105.44-24.20L103.76-24.20L103.76-13.72L105.68-13.72Q108.88-13.72 110.68-15.20Q112.48-16.68 112.48-18.92L112.48-18.92Q112.48-21.72 110.64-22.96Q108.80-24.20 105.44-24.20L105.44-24.20Z M136.52 0L123.68 0L123.68-0.64L127.08-2.28L127.08-24.12L123.68-25.76L123.68-26.40L136.52-26.40L136.52-25.76L133.12-24.12L133.12-2.28L136.52-0.64L136.52 0ZM143.68 0L133.12-13.32L144.08-24.28L141.12-25.76L141.12-26.40L150.56-26.40L150.56-25.76L147.92-24.64L138.64-15.72L149.76-1.80L152.56-0.64L152.56 0L143.68 0Z M164.32 0L155.64 0L155.64-0.64L158.08-2L168.52-26.60L172.04-26.60L182.36-2.08L185.08-0.64L185.08 0L172.44 0L172.44-0.64L175.92-2.08L173.20-8.72L163.72-8.72L161-2.08L164.32-0.64L164.32 0ZM168.48-20.24L164.64-10.92L172.28-10.92L168.48-20.24Z M199.08 0L189.52 0L189.52-0.64L192.92-2.28L193.76-24.12L190.24-25.76L190.24-26.40L200.16-26.40L208.20-7.80L216.16-26.40L225.76-26.40L225.76-25.76L222.28-24.52L222.96-2.28L226-0.64L226 0L213.88 0L213.88-0.64L217.08-2.24L216.68-21.24L207.56 0.20L205.32 0.20L196.12-21.16L195.60-2.24L199.08-0.64L199.08 0Z M239.08 0L230.40 0L230.40-0.64L232.84-2L243.28-26.60L246.80-26.60L257.12-2.08L259.84-0.64L259.84 0L247.20 0L247.20-0.64L250.68-2.08L247.96-8.72L238.48-8.72L235.76-2.08L239.08-0.64L239.08 0ZM243.24-20.24L239.40-10.92L247.04-10.92L243.24-20.24Z M286.48 0L264.36 0L264.36-0.64L267.76-2.28L267.76-24.12L264.36-25.76L264.36-26.40L277.60-26.40L277.60-25.76L273.80-24.12L273.80-2.20L282.60-2.20L285.84-9.76L286.48-9.76L286.48 0Z M313.80 0L304.24 0L304.24-0.64L307.64-2.28L308.48-24.12L304.96-25.76L304.96-26.40L314.88-26.40L322.92-7.80L330.88-26.40L340.48-26.40L340.48-25.76L337-24.52L337.68-2.28L340.72-0.64L340.72 0L328.60 0L328.60-0.64L331.80-2.24L331.40-21.24L322.28 0.20L320.04 0.20L310.84-21.16L310.32-2.24L313.80-0.64L313.80 0Z M360.12 0.40L360.12 0.40Q357.16 0.40 354.64-0.62Q352.12-1.64 350.26-3.46Q348.40-5.28 347.36-7.76Q346.32-10.24 346.32-13.20L346.32-13.20Q346.32-16.16 347.36-18.64Q348.40-21.12 350.26-22.94Q352.12-24.76 354.64-25.78Q357.16-26.80 360.12-26.80L360.12-26.80Q363.12-26.80 365.64-25.78Q368.16-24.76 370.02-22.94Q371.88-21.12 372.92-18.64Q373.96-16.16 373.96-13.20L373.96-13.20Q373.96-10.24 372.92-7.76Q371.88-5.28 370.02-3.46Q368.16-1.64 365.64-0.62Q363.12 0.40 360.12 0.40ZM360.76-1.68L360.76-1.68Q362.76-1.68 364.30-2.96Q365.84-4.24 366.70-6.56Q367.56-8.88 367.56-12L367.56-12Q367.56-15.84 366.50-18.72Q365.44-21.60 363.64-23.18Q361.84-24.76 359.60-24.76L359.60-24.76Q357.60-24.76 356.04-23.50Q354.48-22.24 353.58-19.92Q352.68-17.60 352.68-14.48L352.68-14.48Q352.68-10.64 353.76-7.76Q354.84-4.88 356.68-3.28Q358.52-1.68 360.76-1.68Z M399.20 0L384.68 0L384.68-0.64L388.92-2.28L388.92-24.20L383.20-24.20L380-17.60L379.36-17.60L379.36-26.40L404.52-26.40L404.52-17.60L403.88-17.60L400.68-24.20L394.96-24.20L394.96-2.28L399.20-0.64L399.20 0Z M423.72 0.40L423.72 0.40Q420.76 0.40 418.24-0.62Q415.72-1.64 413.86-3.46Q412.00-5.28 410.96-7.76Q409.92-10.24 409.92-13.20L409.92-13.20Q409.92-16.16 410.96-18.64Q412.00-21.12 413.86-22.94Q415.72-24.76 418.24-25.78Q420.76-26.80 423.72-26.80L423.72-26.80Q426.72-26.80 429.24-25.78Q431.76-24.76 433.62-22.94Q435.48-21.12 436.52-18.64Q437.56-16.16 437.56-13.20L437.56-13.20Q437.56-10.24 436.52-7.76Q435.48-5.28 433.62-3.46Q431.76-1.64 429.24-0.62Q426.72 0.40 423.72 0.40ZM424.36-1.68L424.36-1.68Q426.36-1.68 427.90-2.96Q429.44-4.24 430.30-6.56Q431.16-8.88 431.16-12L431.16-12Q431.16-15.84 430.10-18.72Q429.04-21.60 427.24-23.18Q425.44-24.76 423.20-24.76L423.20-24.76Q421.20-24.76 419.64-23.50Q418.08-22.24 417.18-19.92Q416.28-17.60 416.28-14.48L416.28-14.48Q416.28-10.64 417.36-7.76Q418.44-4.88 420.28-3.28Q422.12-1.68 424.36-1.68Z M455.72 0L443.28 0L443.28-0.64L446.68-2.28L446.68-24.12L443.28-25.76L443.28-26.40L456.96-26.40Q461.16-26.40 463.58-24.66Q466.00-22.92 466.00-19.88L466.00-19.88Q466.00-17.68 464.52-16.10Q463.04-14.52 460.64-13.60L460.64-13.60L468.04-2.24L470.92-0.64L470.92 0L462.24 0L454.84-12.24L452.72-12.24L452.72-2.32L455.72-0.64L455.72 0ZM454.32-24.20L454.32-24.20L452.72-24.20L452.72-14.20L454.56-14.20Q457.04-14.20 458.48-15.60Q459.92-17 459.92-19.24L459.92-19.24Q459.92-21.60 458.50-22.90Q457.08-24.20 454.32-24.20Z M483.44 0.40L483.44 0.40Q480.80 0.40 478.78-0.14Q476.76-0.68 474.88-1.64L474.88-1.64L474.48-8.40L475.20-8.40L478.04-3.48Q479.12-2.60 480.38-2.12Q481.64-1.64 482.96-1.64L482.96-1.64Q485.12-1.64 486.48-2.66Q487.84-3.68 487.84-5.68L487.84-5.68Q487.84-7.04 487.22-7.92Q486.60-8.80 485.16-9.58Q483.72-10.36 481.20-11.48L481.20-11.48Q478.36-12.72 476.84-14.44Q475.32-16.16 475.32-18.72L475.32-18.72Q475.32-20.32 476.14-21.78Q476.96-23.24 478.34-24.38Q479.72-25.52 481.42-26.16Q483.12-26.80 484.92-26.80L484.92-26.80Q486.96-26.80 488.84-26.32Q490.72-25.84 492.32-24.96L492.32-24.96L492.72-18.56L492.04-18.56L489.24-23.08Q488.20-23.88 487.22-24.30Q486.24-24.72 485-24.72L485-24.72Q483.36-24.72 482.28-23.68Q481.20-22.64 481.20-20.92L481.20-20.92Q481.20-19.28 482.38-18.22Q483.56-17.16 486.48-15.84L486.48-15.84Q490.12-14.16 491.84-12.40Q493.56-10.64 493.56-7.76L493.56-7.76Q493.56-5.20 492.08-3.36Q490.60-1.52 488.28-0.56Q485.96 0.40 483.44 0.40Z"></path></g>
+              </svg>
+            </g>
+            <g opacity="1" transform="rotate(0 0 38.623999999999995)">
+              <svg width="151.7511" height="1.6233" x="0" y="38.623999999999995" version="1.1" preserveAspectRatio="none" viewBox="0 0 151.7511 1.6233">
+                <rect x="0" y="0" width="151.7511" height="1.6233" class="aMG-WEHroEfillColor aMG-WEHroEstrokeColor-str" style="stroke-width:0;" rx="50%" ry="50%"></rect>
+              </svg>
+            </g>
+          </g>
+        </svg>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products & Services</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <a href="#contact" class="btn-quote">Get a Quote</a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Drawer">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products & Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-quote">Get a Quote</a>
+  </div>
+
+  <main>
+    <!-- -----------------------------------------------------------
+         SECTION 2: HERO SECTION
+         ----------------------------------------------------------- -->
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      
+      <!-- Glowing blobs for lustre -->
+      <div class="hero-glow-blob blob-1"></div>
+      <div class="hero-glow-blob blob-2"></div>
+      
+      <div class="hero-content">
+        <h1 class="hero-headline">Trust And Quality Is What We Serve.</h1>
+        <p class="hero-subheadline">
+          Bhopal's Premier Destination for Hydraulic Seals, Pneumatic Seals, Gear Parts, Cylinders, and Industrial Hydraulic Solutions.
+        </p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn-primary">Explore Our Products</a>
+          <a href="#" class="btn-secondary" onclick="forceDownload('Deepkamal Motors Brochure.pdf', 'Deepkamal Motors Brochure.pdf'); return false;">Download Brochure</a>
+        </div>
+      </div>
+      <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+        <span>Scroll Down</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 3: ABOUT US
+         ----------------------------------------------------------- -->
+    <section class="about section-padding reveal" id="about">
+      <div class="container about-grid">
+        <div class="about-text">
+          <span class="label-gold">About Us</span>
+          <h2>20+ Years of Industrial Excellence</h2>
+          <p>
+            Welcome to Deep Kamal Motors, Bhopal — your number one stop for all ranges of Hydraulic and Pneumatic Seals, Gears and Gear Parts, V-Belts, Earthmoving Pumps, Grease, Bearings, O-Rings and Backup Seals, Custom Made Seals, and Hydraulic & Pneumatic Cylinder Repairs.
+          </p>
+          <p>
+            Founded in 2004, Deepkamal Motors has come a long way from its beginnings. Today we serve customers all over Madhya Pradesh and its surrounding areas. You name it, we'll do it — with this motto in our heads, we serve all types of profiles and sizes of seals and gears. We do not believe in a set-it-and-forget-it system; our clients are our top priority. We are always striving to be better so our clients achieve more.
+          </p>
+          <a href="#" class="btn-download-about" onclick="forceDownload('Deepkamal Motors Company Introduction.pdf', 'Deepkamal Motors Company Introduction.pdf'); return false;">
+            <i class="fa-solid fa-file-arrow-down"></i> Download Company Introduction
+          </a>
+        </div>
+        
+        <div class="about-visual">
+          <div class="about-img-container">
+            <img src="about_us_new.png" alt="Deep Kamal Motors Workshop" class="about-img">
+            <div class="about-img-badge">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <div>
+                <p class="badge-title">ESTD 2004</p>
+                <p class="badge-sub">20+ Years of Excellence</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 4: STATS STRIP
+         ----------------------------------------------------------- -->
+    <section class="stats-strip" id="stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="2004">0</span>
+          <span class="stat-label">Year Established</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="550">0</span>
+          <span class="stat-label">Dealers in M.P.</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="40">0</span>
+          <span class="stat-label">Industries Dealing With Us</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="1500">0</span>
+          <span class="stat-label">Different Profiles Available</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 5: PRODUCTS & SERVICES (14 Items)
+         ----------------------------------------------------------- -->
+    <section class="products section-padding" id="products">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="label-gold">Our Products & Services</span>
+          <h2>What We Supply & Service</h2>
+        </div>
+        
+        <!-- Category Tab Filters -->
+        <div class="category-tabs">
+          <button class="tab-btn active" data-filter="all">All Solutions</button>
+          <button class="tab-btn" data-filter="seals">Sealing Systems</button>
+          <button class="tab-btn" data-filter="hydraulics">Fluid Power Systems</button>
+          <button class="tab-btn" data-filter="cooling">Heat Exchange</button>
+          <button class="tab-btn" data-filter="transmission">Gears & Transmission</button>
+        </div>
+        
+        <div class="products-grid">
+          <!-- 1. Hydraulic Seals -->
+          <div class="product-card reveal" data-category="seals">
+            <span class="product-category-label">Sealing Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-ring"></i>
+            </div>
+            <h3>Hydraulic Seals</h3>
+            <p>High-pressure seals specifically engineered for hydraulic cylinders in earthmoving and structural machinery.</p>
+          </div>
+          
+          <!-- 2. Pneumatic Seals -->
+          <div class="product-card reveal" data-category="seals">
+            <span class="product-category-label">Sealing Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-wind"></i>
+            </div>
+            <h3>Pneumatic Seals</h3>
+            <p>Precision dynamic sealing solutions optimized for pneumatic actuators, valves, and compression pistons.</p>
+          </div>
+          
+          <!-- 3. Earthmoving Seal Kits -->
+          <div class="product-card reveal" data-category="seals">
+            <span class="product-category-label">Sealing Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-tractor"></i>
+            </div>
+            <h3>Earthmoving Seal Kits</h3>
+            <p>Complete, high-tolerance sealing kit solutions custom packaged for excavators, loaders, and crawler tractors.</p>
+          </div>
+          
+          <!-- 4. Hydraulic Cylinders - Supply & Repair -->
+          <div class="product-card reveal" data-category="hydraulics">
+            <span class="product-category-label">Fluid Power Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h3>Hydraulic Cylinders - Supply & Repair</h3>
+            <p>Industrial-grade new and reconditioned hydraulic cylinders with chroming, honing, seal replacement, and pressure testing.</p>
+          </div>
+          
+          <!-- 5. Pneumatic Cylinders - Supply & Repair -->
+          <div class="product-card reveal" data-category="hydraulics">
+            <span class="product-category-label">Fluid Power Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-compress"></i>
+            </div>
+            <h3>Pneumatic Cylinders - Supply & Repair</h3>
+            <p>Industrial-grade precision pneumatic cylinders for automation and machinery with seal replacement, bore honing, refurbishment, and performance testing.</p>
+          </div>
+          
+          <!-- 6. Hydraulic Pumps & Motors - Supply & Repair -->
+          <div class="product-card reveal" data-category="hydraulics">
+            <span class="product-category-label">Fluid Power Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-rotate"></i>
+            </div>
+            <h3>Hydraulic Pumps & Motors - Supply & Repair</h3>
+            <p>Professional repair and reconditioning for industrial machinery, restoring full performance and extending equipment life plus new unit supply in multiple configurations.</p>
+          </div>
+          
+          <!-- 7. Hydraulic Hand Pumps & Jacks -->
+          <div class="product-card reveal" data-category="hydraulics">
+            <span class="product-category-label">Fluid Power Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-arrow-up-right-dots"></i>
+            </div>
+            <h3>Hydraulic Hand Pumps & Jacks</h3>
+            <p>Industrial hydraulic hand pumps and jacks ranging from 10 Ton to 1000 Ton capacity for lifting, maintenance, and heavy-duty applications.</p>
+          </div>
+          
+          <!-- 8. Power Packs -->
+          <div class="product-card reveal" data-category="hydraulics">
+            <span class="product-category-label">Fluid Power Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3>Power Packs</h3>
+            <p>Self-contained electro-hydraulic and diesel power pack units customized to meet your flow and pressure requirements.</p>
+          </div>
+          
+          <!-- 9. Hydraulic Oil & Grease -->
+          <div class="product-card reveal" data-category="hydraulics">
+            <span class="product-category-label">Fluid Power Systems</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-oil-can"></i>
+            </div>
+            <h3>Hydraulic Oil & Grease</h3>
+            <p>Premium-grade hydraulic fluids and heat-stable industrial greases in multiple ISO viscosity grades for optimal system performance.</p>
+          </div>
+          
+          <!-- 10. Shell & Tube Exchangers -->
+          <div class="product-card reveal" data-category="cooling">
+            <span class="product-category-label">Heat Exchange</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3>Shell & Tube Exchangers</h3>
+            <p>Engineered for extreme high pressure and thermal capacity. Handles massive volumes with extreme structural durability.</p>
+          </div>
+          
+          <!-- 11. Plate Heat Exchangers -->
+          <div class="product-card reveal" data-category="cooling">
+            <span class="product-category-label">Heat Exchange</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-border-all"></i>
+            </div>
+            <h3>Plate Heat Exchangers</h3>
+            <p>Ultra-compact plate heat transfer packs optimized for HVAC, chemical refining, and space-limited environments.</p>
+          </div>
+          
+          <!-- 12. Cooling System Design -->
+          <div class="product-card reveal" data-category="cooling">
+            <span class="product-category-label">Heat Exchange</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-temperature-arrow-down"></i>
+            </div>
+            <h3>Cooling System Design</h3>
+            <p>Turnkey cooling system engineering including radiator circuits, monitoring electronics, and dynamic supply valves with filters and auto cutoff switches.</p>
+          </div>
+          
+          <!-- 13. Gears & Gear Parts -->
+          <div class="product-card reveal" data-category="transmission">
+            <span class="product-category-label">Gears & Transmission</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <h3>Gears & Gear Parts</h3>
+            <p>Heavy industrial spur gears, helical gears, and transmission teeth engineered for heavy-duty rotary machineries.</p>
+          </div>
+          
+          <!-- 14. Gearbox Repair -->
+          <div class="product-card reveal" data-category="transmission">
+            <span class="product-category-label">Gears & Transmission</span>
+            <div class="product-icon-container">
+              <i class="fa-solid fa-wrench"></i>
+            </div>
+            <h3>Gearbox Repair</h3>
+            <p>Expert gearbox inspection, rebuilding, and repair services for heavy-duty industrial gearboxes used in cement plants, construction equipment, and manufacturing machinery.</p>
+          </div>
+        </div>
+        
+        <div class="products-footer text-center">
+          <a href="#" class="btn-gold-brochure" onclick="forceDownload('Deepkamal Motors Brochure.pdf', 'Deepkamal Motors Brochure.pdf'); return false;">
+            <i class="fa-solid fa-download"></i> Download Full Brochure
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 6: INDUSTRIES WE SERVE
+         ----------------------------------------------------------- -->
+    <section class="industries section-padding reveal" id="industries">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="label-gold">Industries We Serve</span>
+          <h2>Heavy Duty Expertise Across Domains</h2>
+        </div>
+        
+        <div class="industries-grid">
+          <div class="industry-card">
+            <i class="fa-solid fa-industry"></i>
+            <span>Cement Plants</span>
+          </div>
+          <div class="industry-card">
+            <i class="fa-solid fa-trowel-bricks"></i>
+            <span>Construction & Earthmoving</span>
+          </div>
+          <div class="industry-card">
+            <i class="fa-solid fa-gears"></i>
+            <span>Manufacturing</span>
+          </div>
+          <div class="industry-card">
+            <i class="fa-solid fa-helmet-safety"></i>
+            <span>Mining & Quarrying</span>
+          </div>
+          <div class="industry-card">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Power & Energy</span>
+          </div>
+          <div class="industry-card">
+            <i class="fa-solid fa-faucet-drip"></i>
+            <span>Oil & Gas</span>
+          </div>
+          <div class="industry-card">
+            <i class="fa-solid fa-road"></i>
+            <span>Infrastructure & Roads</span>
+          </div>
+          <div class="industry-card">
+            <i class="fa-solid fa-wheat-awn"></i>
+            <span>Agriculture & Farming</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 7: OUR ESTEEMED CLIENTS (3x3 Grid Layout)
+         ----------------------------------------------------------- -->
+    <section class="clients section-padding text-center" id="clients">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="label-gold">Our Esteemed Clients</span>
+          <h2>Companies Who Trust Us</h2>
+          <p class="clients-subtext">Trusted by Madhya Pradesh's largest infrastructure and construction companies.</p>
+        </div>
+        
+        <div class="clients-grid">
+          <!-- Logo 1: Bansal Group -->
+          <div class="client-logo-card reveal">
+            <img src="bansal logo.avif" alt="Bansal Group Logo">
+          </div>
+          <!-- Logo 2: L&T -->
+          <div class="client-logo-card reveal">
+            <img src="L&T.png" alt="L&T Logo">
+          </div>
+          <!-- Logo 3: Birla Corporation Limited -->
+          <div class="client-logo-card reveal">
+            <img src="BCL_vertical_logo.avif" alt="Birla Corporation Limited Logo">
+          </div>
+          <!-- Logo 4: BHEL -->
+          <div class="client-logo-card reveal">
+            <img src="bhel logo.avif" alt="BHEL Logo">
+          </div>
+          <!-- Logo 5: Transrail -->
+          <div class="client-logo-card reveal">
+            <img src="transrail_logo.png" alt="Transrail Logo">
+          </div>
+          <!-- Logo 6: Dilip Buildcon Limited -->
+          <div class="client-logo-card reveal">
+            <img src="Dilip_Buildcon_Limited_Logo.png" alt="Dilip Buildcon Limited Logo">
+          </div>
+          <!-- Logo 7: Daawat -->
+          <div class="client-logo-card reveal">
+            <img src="daawat logo.png" alt="Daawat Logo">
+          </div>
+          <!-- Logo 8: Jaypee Group -->
+          <div class="client-logo-card reveal">
+            <img src="jaypee group logo.avif" alt="Jaypee Group Logo">
+          </div>
+          <!-- Logo 9: Flowman Metrix -->
+          <div class="client-logo-card reveal">
+            <img src="floman metrix logo.jpg" alt="Flowman Metrix Logo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 8: CONTACT ACTION BUTTONS (CTA STRIP)
+         ----------------------------------------------------------- -->
+    <section class="cta-strip section-padding text-center" id="cta-strip">
+      <div class="container">
+        <div class="cta-header">
+          <h2>Ready to Work Together?</h2>
+          <p>Reach out through any channel — we're available Monday to Saturday, 10:30 AM – 6:30 PM</p>
+        </div>
+        
+        <div class="cta-buttons-container">
+          <button class="action-btn btn-call" onclick="window.location.href = 'tel:+919425303085'" aria-label="Call Us Now">
+            <i class="fa-solid fa-phone"></i>
+            <span class="btn-label">Call Us Now</span>
+            <span class="btn-sub">+91-9425303085</span>
+          </button>
+          
+          <button class="action-btn btn-email" onclick="window.location.href = 'mailto:deepkamalmotors@gmail.com'" aria-label="Send an Email">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="btn-label">Send an Email</span>
+            <span class="btn-sub">deepkamalmotors@gmail.com</span>
+          </button>
+          
+          <button class="action-btn btn-whatsapp" onclick="window.open('https://wa.me/919425303085', '_blank')" aria-label="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="btn-label">WhatsApp Chat</span>
+            <span class="btn-sub">Chat with us instantly</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 9: CONTACT & FORM
+         ----------------------------------------------------------- -->
+    <section class="contact-section section-padding reveal" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <div>
+            <span class="label-gold">Get In Touch</span>
+            <h2>Contact Information</h2>
+          </div>
+          
+          <!-- Card 1: Address -->
+          <div class="info-card">
+            <div class="info-icon-container">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="info-content">
+              <h3>Head Office</h3>
+              <p>Plot No. 65, Shahastrabahu Nagar, Behind Hanuman Nagar, Near Golden City, Jatkhedi Road, Bhopal – 462026, M.P., India</p>
+            </div>
+          </div>
+          
+          <!-- Card 2: Contact Numbers -->
+          <div class="info-card">
+            <div class="info-icon-container">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <div class="info-content">
+              <h3>Contact Numbers</h3>
+              <p><strong>General:</strong> +91-9425303085, +91-9300763304</p>
+              <p><strong>For Dealership:</strong> +91-8349134439</p>
+              <p><strong>For Industrial:</strong> +91-9425605561</p>
+            </div>
+          </div>
+          
+          <!-- Card 3: Email -->
+          <div class="info-card">
+            <div class="info-icon-container">
+              <i class="fa-solid fa-envelope-open-text"></i>
+            </div>
+            <div class="info-content">
+              <h3>Email Address</h3>
+              <p>deepkamalmotors@gmail.com</p>
+            </div>
+          </div>
+          
+          <!-- Card 4: Hours -->
+          <div class="info-card">
+            <div class="info-icon-container">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="info-content">
+              <h3>Working Hours</h3>
+              <p>Monday – Saturday: 10:30 AM to 6:30 PM</p>
+              <p style="color: #888888; font-size: 0.85rem; margin-top: 4px;">Sundays Closed</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- B2B Contact Form -->
+        <div class="contact-form-container">
+          <form class="contact-form" id="inquiryForm" onsubmit="handleInquirySubmit(event)">
+            <h3 class="form-title">Send Us an Inquiry</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-name">Full Name *</label>
+                <input type="text" id="form-name" name="name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email Address *</label>
+                <input type="email" id="form-email" name="email" placeholder="john@example.com" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-phone">Phone Number *</label>
+                <input type="tel" id="form-phone" name="phone" placeholder="+91-9000000000" required>
+              </div>
+              <div class="form-group">
+                <label for="form-company">Company Name</label>
+                <input type="text" id="form-company" name="company" placeholder="Company Ltd">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="form-interest">Service Interest *</label>
+              <select id="form-interest" name="interest" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="sealing">Sealing Systems (Hydraulic/Pneumatic Seals)</option>
+                <option value="cylinders">Fluid Power (Hydraulic/Pneumatic Cylinders)</option>
+                <option value="exchangers">Heat Exchange (Shell & Tube, Plates)</option>
+                <option value="repairs">Cylinder & Gearbox Repair/Refurbishment</option>
+                <option value="transmission">Power Transmission (Gears & Parts)</option>
+                <option value="dealership">Dealership/Distribution Inquiry</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="form-message">Your Message *</label>
+              <textarea id="form-message" rows="4" placeholder="Describe your technical requirement..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-quote form-submit-btn">Submit Inquiry</button>
+          </form>
+
+          <!-- Thank You Message -->
+          <div class="thank-you-container" id="thankYouMessage">
+            <div class="thank-you-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="thank-you-title">Thank You!</h3>
+            <p class="thank-you-text">
+              Your inquiry has been successfully received. Our engineering team will review your requirements and get back to you shortly.
+            </p>
+            <button class="btn-submit-another" onclick="resetInquiryForm()">
+              <i class="fa-solid fa-arrow-rotate-left"></i> Submit Another Response
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 10: DEDICATED LOCATION MAP SECTION
+         ----------------------------------------------------------- -->
+    <section class="find-us section-padding reveal" id="find-us">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="label-gold">Find Us</span>
+          <h2>Our Office Location</h2>
+        </div>
+        <div class="map-full-container">
+          <iframe 
+            src="https://maps.google.com/maps?q=Deepkamal+Motors,+Bhopal&output=embed" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Deep Kamal Motors Location Map">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- -----------------------------------------------------------
+       SECTION 11: FOOTER
+       ----------------------------------------------------------- -->
+  <footer>
+    <div class="container footer-grid">
+      <!-- Col 1: Branding -->
+      <div class="footer-col-branding">
+        <div class="logo-container">
+          <svg viewBox="0 0 380.2467 104.2479" width="380.2467" height="104.2479" class="logo-svg" xmlns="http://www.w3.org/2000/svg" style="--logo-primary: #FFFFFF; --logo-accent-gold: #B09E80;">
+            <style>
+              .a6izo4zJpcolor {fill:#675434;fill-opacity:1;}
+              .aD6z1nYkhcolor {fill:#042B65;fill-opacity:1;}
+              .aLgOaV3zRcolors-0 {fill:#675434;fill-opacity:0.98;}
+              .aMG-WEHroEfillColor {fill:#675434;fill-opacity:1;}
+              .aMG-WEHroEstrokeColor-str {stroke:#E9E9E9;stroke-opacity:1;}
+              .aR9TavoXYfillColor {fill:#675434;fill-opacity:1;}
+              .aR9TavoXYfillColor-floo {flood-color:#675434;flood-opacity:1;}
+              .shapeStroke-str {stroke:#E9E9E9;stroke-opacity:1;}
+              .text-floo {flood-color:#B09E80;flood-opacity:1;}
+            </style>
+            <g>
+              <g opacity="1" transform="rotate(0 69.96030000000002 88.99710000000002)">
+                <svg width="245.1884" height="15.2508" x="69.96030000000002" y="88.99710000000002" version="1.1" preserveAspectRatio="none" viewBox="0.16 -30.88 625.72 38.92">
+                  <g transform="matrix(1 0 0 1 0 0)" class="a6izo4zJpcolor">
+                    <path d="M9.44 0L9.44-23.60L0.16-23.60L0.16-28L23.92-28L23.92-23.60L14.64-23.60L14.64 0L9.44 0Z M43.48-21.60Q47.52-21.60 49.96-19.24Q52.40-16.88 52.40-12.24L52.40-12.24L52.40 0L47.40 0L47.40-11.60Q47.40-14.40 46.08-15.82Q44.76-17.24 42.32-17.24L42.32-17.24Q39.56-17.24 37.96-15.58Q36.36-13.92 36.36-10.80L36.36-10.80L36.36 0L31.36 0L31.36-29.68L36.36-29.68L36.36-18.88Q37.60-20.20 39.42-20.90Q41.24-21.60 43.48-21.60L43.48-21.60Z M62.76 0L62.76-21.36L67.76-21.36L67.76 0L62.76 0ZM65.28-24.88Q63.92-24.88 63.00-25.74Q62.08-26.60 62.08-27.88L62.08-27.88Q62.08-29.16 63.00-30.02Q63.92-30.88 65.28-30.88L65.28-30.88Q66.64-30.88 67.56-30.06Q68.48-29.24 68.48-28L68.48-28Q68.48-26.68 67.58-25.78Q66.68-24.88 65.28-24.88L65.28-24.88Z M90.44-21.60Q94.48-21.60 96.92-19.24Q99.36-16.88 99.36-12.24L99.36-12.24L99.36 0L94.36 0L94.36-11.60Q94.36-14.40 93.04-15.82Q91.72-17.24 89.28-17.24L89.28-17.24Q86.52-17.24 84.92-15.58Q83.32-13.92 83.32-10.80L83.32-10.80L83.32 0L78.32 0L78.32-21.36L83.08-21.36L83.08-18.60Q84.32-20.08 86.20-20.84Q88.08-21.60 90.44-21.60L90.44-21.60Z M125.84 0L118.44-9.16L114.72-5.64L114.72 0L109.72 0L109.72-29.68L114.72-29.68L114.72-11.76L125.08-21.36L131.08-21.36L122.16-12.40L131.92 0L125.84 0Z M181.84-0.08L184.24 2.80Q182.84 4.44 180.98 5.28Q179.12 6.12 176.92 6.12L176.92 6.12Q174.04 6.12 171.64 4.82Q169.24 3.52 166.16 0.32L166.16 0.32Q162.28 0 159.20-1.94Q156.12-3.88 154.40-7.02Q152.68-10.16 152.68-14L152.68-14Q152.68-18.08 154.64-21.38Q156.60-24.68 160.04-26.54Q163.48-28.40 167.76-28.40L167.76-28.40Q172.04-28.40 175.48-26.54Q178.92-24.68 180.88-21.40Q182.84-18.12 182.84-14L182.84-14Q182.84-10.68 181.52-7.86Q180.20-5.04 177.84-3.06Q175.48-1.08 172.36-0.20L172.36-0.20Q173.52 1.04 174.64 1.60Q175.76 2.16 177.04 2.16L177.04 2.16Q179.80 2.16 181.84-0.08L181.84-0.08ZM157.92-14Q157.92-11.20 159.20-8.94Q160.48-6.68 162.72-5.42Q164.96-4.16 167.76-4.16L167.76-4.16Q170.56-4.16 172.80-5.42Q175.04-6.68 176.32-8.94Q177.60-11.20 177.60-14L177.60-14Q177.60-16.80 176.32-19.06Q175.04-21.32 172.80-22.58Q170.56-23.84 167.76-23.84L167.76-23.84Q164.96-23.84 162.72-22.58Q160.48-21.32 159.20-19.06Q157.92-16.80 157.92-14L157.92-14Z M207.56-21.36L212.56-21.36L212.56 0L207.80 0L207.80-2.72Q206.60-1.28 204.80-0.50Q203.00 0.28 200.92 0.28L200.92 0.28Q196.64 0.28 194.18-2.10Q191.72-4.48 191.72-9.16L191.72-9.16L191.72-21.36L196.72-21.36L196.72-9.84Q196.72-6.96 198.02-5.54Q199.32-4.12 201.72-4.12L201.72-4.12Q204.40-4.12 205.98-5.78Q207.56-7.44 207.56-10.56L207.56-10.56L207.56-21.36Z M231.28-21.60Q236.00-21.60 238.50-19.34Q241.00-17.08 241.00-12.52L241.00-12.52L241.00 0L236.28 0L236.28-2.60Q235.36-1.20 233.66-0.46Q231.96 0.28 229.56 0.28L229.56 0.28Q227.16 0.28 225.36-0.54Q223.56-1.36 222.58-2.82Q221.60-4.28 221.60-6.12L221.60-6.12Q221.60-9 223.74-10.74Q225.88-12.48 230.48-12.48L230.48-12.48L236.00-12.48L236.00-12.80Q236.00-15.04 234.66-16.24Q233.32-17.44 230.68-17.44L230.68-17.44Q228.88-17.44 227.14-16.88Q225.40-16.32 224.20-15.32L224.20-15.32L222.24-18.96Q223.92-20.24 226.28-20.92Q228.64-21.60 231.28-21.60L231.28-21.60ZM230.60-3.36Q232.48-3.36 233.94-4.22Q235.40-5.08 236.00-6.68L236.00-6.68L236.00-9.16L230.84-9.16Q226.52-9.16 226.52-6.32L226.52-6.32Q226.52-4.96 227.60-4.16Q228.68-3.36 230.60-3.36L230.60-3.36Z M251.40 0L251.40-29.68L256.40-29.68L256.40 0L251.40 0Z M266.96 0L266.96-21.36L271.96-21.36L271.96 0L266.96 0ZM269.48-24.88Q268.12-24.88 267.20-25.74Q266.28-26.60 266.28-27.88L266.28-27.88Q266.28-29.16 267.20-30.02Q268.12-30.88 269.48-30.88L269.48-30.88Q270.84-30.88 271.76-30.06Q272.68-29.24 272.68-28L272.68-28Q272.68-26.68 271.78-25.78Q270.88-24.88 269.48-24.88L269.48-24.88Z M293.96-4.72L295.36-1.16Q294.48-0.44 293.22-0.08Q291.96 0.28 290.56 0.28L290.56 0.28Q287.04 0.28 285.12-1.56Q283.20-3.40 283.20-6.92L283.20-6.92L283.20-17.20L279.68-17.20L279.68-21.20L283.20-21.20L283.20-26.08L288.20-26.08L288.20-21.20L293.92-21.20L293.92-17.20L288.20-17.20L288.20-7.04Q288.20-5.48 288.96-4.66Q289.72-3.84 291.16-3.84L291.16-3.84Q292.84-3.84 293.96-4.72L293.96-4.72Z M318.28-21.36L323.08-21.36L313.08 1.72Q311.68 5.20 309.68 6.62Q307.68 8.04 304.84 8.04L304.84 8.04Q303.24 8.04 301.68 7.52Q300.12 7 299.12 6.08L299.12 6.08L301.12 2.40Q301.84 3.08 302.82 3.48Q303.80 3.88 304.80 3.88L304.80 3.88Q306.12 3.88 306.98 3.20Q307.84 2.52 308.56 0.92L308.56 0.92L308.92 0.08L299.60-21.36L304.80-21.36L311.52-5.56L318.28-21.36Z M330.52-6.36Q331.92-6.36 332.84-5.44Q333.76-4.52 333.76-3.04L333.76-3.04Q333.76-2.40 333.58-1.70Q333.40-1 332.84 0.40L332.84 0.40L330.80 6.04L327.56 6.04L329.16-0.08Q328.28-0.44 327.78-1.22Q327.28-2 327.28-3.04L327.28-3.04Q327.28-4.52 328.20-5.44Q329.12-6.36 330.52-6.36L330.52-6.36Z M363.84 0L363.84-23.60L354.56-23.60L354.56-28L378.32-28L378.32-23.60L369.04-23.60L369.04 0L363.84 0Z M397.88-21.60Q401.92-21.60 404.36-19.24Q406.80-16.88 406.80-12.24L406.80-12.24L406.80 0L401.80 0L401.80-11.60Q401.80-14.40 400.48-15.82Q399.16-17.24 396.72-17.24L396.72-17.24Q393.96-17.24 392.36-15.58Q390.76-13.92 390.76-10.80L390.76-10.80L390.76 0L385.76 0L385.76-29.68L390.76-29.68L390.76-18.88Q392-20.20 393.82-20.90Q395.64-21.60 397.88-21.60L397.88-21.60Z M417.16 0L417.16-21.36L422.16-21.36L422.16 0L417.16 0ZM419.68-24.88Q418.32-24.88 417.40-25.74Q416.48-26.60 416.48-27.88L416.48-27.88Q416.48-29.16 417.40-30.02Q418.32-30.88 419.68-30.88L419.68-30.88Q421.04-30.88 421.96-30.06Q422.88-29.24 422.88-28L422.88-28Q422.88-26.68 421.98-25.78Q421.08-24.88 419.68-24.88L419.68-24.88Z M444.84-21.60Q448.88-21.60 451.32-19.24Q453.76-16.88 453.76-12.24L453.76-12.24L453.76 0L448.76 0L448.76-11.60Q448.76-14.40 447.44-15.82Q446.12-17.24 443.68-17.24L443.68-17.24Q440.92-17.24 439.32-15.58Q437.72-13.92 437.72-10.80L437.72-10.80L437.72 0L432.72 0L432.72-21.36L437.48-21.36L437.48-18.60Q438.72-20.08 440.60-20.84Q442.48-21.60 444.84-21.60L444.84-21.60Z M480.24 0L472.84-9.16L469.12-5.64L469.12 0L464.12 0L464.12-29.68L469.12-29.68L469.12-11.76L479.48-21.36L485.48-21.36L476.56-12.40L486.32 0L480.24 0Z M509.08 0L509.08-28L521.32-28Q525.80-28 529.28-26.26Q532.76-24.52 534.68-21.34Q536.60-18.16 536.60-14L536.60-14Q536.60-9.84 534.68-6.66Q532.76-3.48 529.28-1.74Q525.80 0 521.32 0L521.32 0L509.08 0ZM514.28-4.40L521.08-4.40Q524.16-4.40 526.50-5.58Q528.84-6.76 530.10-8.94Q531.36-11.12 531.36-14L531.36-14Q531.36-16.88 530.10-19.06Q528.84-21.24 526.50-22.42Q524.16-23.60 521.08-23.60L521.08-23.60L514.28-23.60L514.28-4.40Z M565.64 0L555.76-11.72L551.32-7.16L551.32 0L546.12 0L546.12-28L551.32-28L551.32-13.64L565.16-28L571-28L559.24-15.48L571.72 0L565.64 0Z M609.92 0L605 0L604.96-18.56L595.76-3.20L593.44-3.20L584.24-18.32L584.24 0L579.28 0L579.28-28L583.56-28L594.68-9.44L605.60-28L609.88-28L609.92 0Z M622.60 0.28Q621.24 0.28 620.28-0.66Q619.32-1.60 619.32-3.04L619.32-3.04Q619.32-4.52 620.26-5.44Q621.20-6.36 622.60-6.36L622.60-6.36Q624-6.36 624.94-5.44Q625.88-4.52 625.88-3.04L625.88-3.04Q625.88-1.60 624.92-0.66Q623.96 0.28 622.60 0.28L622.60 0.28ZM12.251,63.564c0.539,0,0.978,0.438,0.978,0.978c0,0.54-0.438,0.978-0.978,0.978c-0.54,0-0.979-0.438-0.979-0.978C11.272,64.003,11.711,63.564,12.251,63.564z" />
+                  </g>
+                </svg>
+              </g>
+              <g opacity="1" transform="rotate(0 166.8395 0)">
+                <svg width="51.4298" height="48.676" x="166.8395" y="0" version="1.1" preserveAspectRatio="none" viewBox="0.805999755859375 4.5290021896362305 98.19700622558594 92.93900299072266">
+                  <g transform="matrix(1 0 0 1 0 0)" class="aLgOaV3zRcolors-0">
+                    <g>
+                      <path d="M49.904,90.909C27.718,90.909,10.017,85,4.369,75H2.463c0,13,20.396,22.468,47.441,22.468   C76.951,97.468,97.348,88,97.348,75h-1.905C89.794,85,72.092,90.909,49.904,90.909z"></path>
+                      <path d="M5.23,40.323c0.193,0,0.377-0.032,0.563-0.057l-0.116,0.042c6.812,9.136,5.37,23.726,4.329,30.027   c0.862,2.524,3.72,5.132,8.091,7.356c0.715,0.363,1.468,0.718,2.262,1.059c1.104,0.476,2.267,0.916,3.473,1.331   c7.338,2.521,16.435,3.893,26.072,3.893c9.64,0,18.734-1.372,26.075-3.893c1.204-0.415,2.367-0.855,3.472-1.331   c0.793-0.341,1.546-0.695,2.262-1.059c4.372-2.225,7.229-4.832,8.091-7.356c-1.043-6.302-2.484-20.892,4.328-30.027l-0.116-0.042   c0.188,0.024,0.371,0.057,0.564,0.057c2.443,0,4.423-1.98,4.423-4.423c0-2.443-1.979-4.425-4.423-4.425   c-2.444,0-4.424,1.981-4.424,4.425c0,1.535,0.783,2.888,1.973,3.68l-0.216-0.078c0,0-2.424,12.396-9.99,14.615   c-7.569,2.221-7.872-10.579-7.872-17.744c0-5.889,0.137-11.43,0.184-13.218c0.069,0.004,0.138,0.011,0.208,0.011   c2.901,0,5.253-2.353,5.253-5.254s-2.352-5.253-5.253-5.253s-5.254,2.352-5.254,5.253c0,2.203,1.357,4.088,3.281,4.867   l-5.281,17.355c0,0-7.653,23.36-12.916-4.568c-2.506-13.3-3.116-18.026-3.223-19.709c2.688-0.463,4.737-2.799,4.737-5.621   c0-3.152-2.556-5.707-5.709-5.707c-0.059,0-0.115,0.007-0.174,0.009c-0.058-0.002-0.114-0.009-0.173-0.009   c-3.152,0-5.708,2.555-5.708,5.707c0,2.822,2.047,5.158,4.737,5.621c-0.106,1.683-0.718,6.409-3.224,19.709   c-5.263,27.929-12.915,4.568-12.915,4.568l-5.28-17.355c1.923-0.779,3.279-2.664,3.279-4.867c0-2.901-2.351-5.253-5.253-5.253   c-2.901,0-5.254,2.352-5.254,5.253s2.353,5.254,5.254,5.254c0.069,0,0.137-0.007,0.206-0.011c0.049,1.788,0.185,7.329,0.185,13.218   c0,7.165-0.303,19.965-7.87,17.744c-7.568-2.22-9.991-14.615-9.991-14.615L7.681,39.58c1.188-0.792,1.974-2.145,1.974-3.68   c0-2.443-1.981-4.425-4.424-4.425c-2.443,0-4.425,1.981-4.425,4.425C0.806,38.343,2.787,40.323,5.23,40.323z M15.965,68.355   c-0.646,0-1.174-0.526-1.174-1.174s0.527-1.174,1.174-1.174c0.648,0,1.174,0.526,1.174,1.174S16.613,68.355,15.965,68.355z    M21.049,71.581c-1.026,0-1.857-0.832-1.857-1.857s0.832-1.857,1.857-1.857s1.857,0.832,1.857,1.857S22.075,71.581,21.049,71.581z    M28.088,74.611c-1.188,0-2.151-0.963-2.151-2.15s0.964-2.15,2.151-2.15s2.149,0.963,2.149,2.15S29.275,74.611,28.088,74.611z    M37.374,78.287c-2.138,0-3.871-1.733-3.871-3.871c0-2.139,1.733-3.872,3.871-3.872s3.871,1.733,3.871,3.872   C41.245,76.554,39.512,78.287,37.374,78.287z M49.789,81.654c-3.512,0-6.359-2.848-6.359-6.358c0-3.512,2.848-6.359,6.359-6.359   s6.359,2.848,6.359,6.359C56.148,78.807,53.301,81.654,49.789,81.654z M62.204,78.287c-2.138,0-3.871-1.733-3.871-3.871   c0-2.139,1.733-3.872,3.871-3.872s3.872,1.733,3.872,3.872C66.076,76.554,64.342,78.287,62.204,78.287z M71.491,74.611   c-1.188,0-2.15-0.963-2.15-2.15s0.963-2.15,2.15-2.15s2.15,0.963,2.15,2.15S72.679,74.611,71.491,74.611z M78.53,71.581   c-1.026,0-1.858-0.832-1.858-1.857s0.832-1.857,1.858-1.857s1.857,0.832,1.857,1.857S79.557,71.581,78.53,71.581z M83.613,68.355   c-0.648,0-1.173-0.526-1.173-1.174s0.524-1.174,1.173-1.174c0.647,0,1.174,0.526,1.174,1.174S84.261,68.355,83.613,68.355z    M88.306,64.542c0,0.54-0.438,0.978-0.979,0.978c-0.539,0-0.977-0.438-0.977-0.978c0-0.539,0.438-0.978,0.977-0.978   C87.868,63.564,88.306,64.003,88.306,64.542z M13.899,55c0,6,18.976,10.087,36.005,10.087C66.935,65.087,85.909,61,85.909,55h1.815   c0,7-19.229,11.902-37.82,11.902C31.314,66.902,12.085,62,12.085,55H13.899z M12.251,63.564c0.539,0,0.978,0.438,0.978,0.978c0,0.54-0.438,0.978-0.978,0.978c-0.54,0-0.979-0.438-0.979-0.978C11.272,64.003,11.711,63.564,12.251,63.564z"></path>
+                    </g>
+                  </g>
+                </svg>
+              </g>
+              <g opacity="1" transform="rotate(0 228.49559999999997 38.623999999999995)">
+                <svg width="151.7511" height="1.6233" x="228.49559999999997" y="38.623999999999995" version="1.1" preserveAspectRatio="none" viewBox="0 0 151.7511 1.6233">
+                  <rect x="0" y="0" width="151.7511" height="1.6233" class="aR9TavoXYfillColor shapeStroke-str" style="stroke-width:0;" rx="50%" ry="50%"></rect>
+                </svg>
+              </g>
+              <g opacity="1" transform="rotate(0 16.454499999999996 58.53189999999998)">
+                <svg width="352.2" height="19.4791" x="16.454499999999996" y="58.53189999999998" version="1.1" preserveAspectRatio="none" viewBox="1.76 -26.8 491.8 27.2">
+                  <g transform="matrix(1 0 0 1 0 0)" class="aD6z1nYkhcolor">
+                    <path d="M15.12 0L1.76 0L1.76-0.64L5.16-2.28L5.16-24.12L1.76-25.76L1.76-26.40L15.40-26.40Q20.16-26.40 23.48-24.84Q26.80-23.28 28.54-20.56Q30.28-17.84 30.28-14.40L30.28-14.40Q30.28-11.28 29.14-8.64Q28-6 25.96-4.08Q23.92-2.16 21.16-1.08Q18.40 0 15.12 0L15.12 0ZM13.76-24.20L13.76-24.20L11.20-24.20L11.20-2.20L14.32-2.20Q18.96-2.20 21.48-5.18Q24-8.16 24-13.16L24-13.16Q24-18.20 21.42-21.20Q18.84-24.20 13.76-24.20Z M58.76 0L35.84 0L35.84-0.64L39.24-2.28L39.24-24.12L35.84-25.76L35.84-26.40L57.64-26.40L57.64-19.48L57-19.48L54.04-24.20L45.28-24.20L45.28-14.72L51.44-14.72L53.68-18.16L54.32-18.16L54.32-9.16L54.32-9.16L51.44-12.52L45.28-12.52L45.28-2.20L55-2.20L58.12-8.16L58.76-8.16L58.76 0Z M88 0L65.08 0L65.08-0.64L68.48-2.28L68.48-24.12L65.08-25.76L65.08-26.40L86.88-26.40L86.88-19.48L86.24-19.48L83.28-24.20L74.52-24.20L74.52-14.72L80.68-14.72L82.92-18.16L83.56-18.16L83.56-9.16L82.92-9.16L80.68-12.52L74.52-12.52L74.52-2.20L84.24-2.20L87.36-8.16L88-8.16L88 0Z M107.84 0L94.32 0L94.32-0.64L97.72-2.28L97.72-24.12L94.32-25.76L94.32-26.40L108.16-26.40Q112.88-26.40 115.74-24.70Q118.60-23 118.60-19.28L118.60-19.28Q118.60-17.04 117.10-15.34Q115.60-13.64 113.04-12.70Q110.48-11.76 107.20-11.76L107.20-11.76L103.76-11.76L103.76-2.28L107.84-0.64L107.84 0ZM105.44-24.20L103.76-24.20L103.76-13.72L105.68-13.72Q108.88-13.72 110.68-15.20Q112.48-16.68 112.48-18.92L112.48-18.92Q112.48-21.72 110.64-22.96Q108.80-24.20 105.44-24.20L105.44-24.20Z M136.52 0L123.68 0L123.68-0.64L127.08-2.28L127.08-24.12L123.68-25.76L123.68-26.40L136.52-26.40L136.52-25.76L133.12-24.12L133.12-2.28L136.52-0.64L136.52 0ZM143.68 0L133.12-13.32L144.08-24.28L141.12-25.76L141.12-26.40L150.56-26.40L150.56-25.76L147.92-24.64L138.64-15.72L149.76-1.80L152.56-0.64L152.56 0L143.68 0Z M164.32 0L155.64 0L155.64-0.64L158.08-2L168.52-26.60L172.04-26.60L182.36-2.08L185.08-0.64L185.08 0L172.44 0L172.44-0.64L175.92-2.08L173.20-8.72L163.72-8.72L161-2.08L164.32-0.64L164.32 0ZM168.48-20.24L164.64-10.92L172.28-10.92L168.48-20.24Z M199.08 0L189.52 0L189.52-0.64L192.92-2.28L193.76-24.12L190.24-25.76L190.24-26.40L200.16-26.40L208.20-7.80L216.16-26.40L225.76-26.40L225.76-25.76L222.28-24.52L222.96-2.28L226-0.64L226 0L213.88 0L213.88-0.64L217.08-2.24L216.68-21.24L207.56 0.20L205.32 0.20L196.12-21.16L195.60-2.24L199.08-0.64L199.08 0Z M239.08 0L230.40 0L230.40-0.64L232.84-2L243.28-26.60L246.80-26.60L257.12-2.08L259.84-0.64L259.84 0L247.20 0L247.20-0.64L250.68-2.08L247.96-8.72L238.48-8.72L235.76-2.08L239.08-0.64L239.08 0ZM243.24-20.24L239.40-10.92L247.04-10.92L243.24-20.24Z M286.48 0L264.36 0L264.36-0.64L267.76-2.28L267.76-24.12L264.36-25.76L264.36-26.40L277.60-26.40L277.60-25.76L273.80-24.12L273.80-2.20L282.60-2.20L285.84-9.76L286.48-9.76L286.48 0Z M313.80 0L304.24 0L304.24-0.64L307.64-2.28L308.48-24.12L304.96-25.76L304.96-26.40L314.88-26.40L322.92-7.80L330.88-26.40L340.48-26.40L340.48-25.76L337-24.52L337.68-2.28L340.72-0.64L340.72 0L328.60 0L328.60-0.64L331.80-2.24L331.40-21.24L322.28 0.20L320.04 0.20L310.84-21.16L310.32-2.24L313.80-0.64L313.80 0Z M360.12 0.40L360.12 0.40Q357.16 0.40 354.64-0.62Q352.12-1.64 350.26-3.46Q348.40-5.28 347.36-7.76Q346.32-10.24 346.32-13.20L346.32-13.20Q346.32-16.16 347.36-18.64Q348.40-21.12 350.26-22.94Q352.12-24.76 354.64-25.78Q357.16-26.80 360.12-26.80L360.12-26.80Q363.12-26.80 365.64-25.78Q368.16-24.76 370.02-22.94Q371.88-21.12 372.92-18.64Q373.96-16.16 373.96-13.20L373.96-13.20Q373.96-10.24 372.92-7.76Q371.88-5.28 370.02-3.46Q368.16-1.64 365.64-0.62Q363.12 0.40 360.12 0.40ZM360.76-1.68L360.76-1.68Q362.76-1.68 364.30-2.96Q365.84-4.24 366.70-6.56Q367.56-8.88 367.56-12L367.56-12Q367.56-15.84 366.50-18.72Q365.44-21.60 363.64-23.18Q361.84-24.76 359.60-24.76L359.60-24.76Q357.60-24.76 356.04-23.50Q354.48-22.24 353.58-19.92Q352.68-17.60 352.68-14.48L352.68-14.48Q352.68-10.64 353.76-7.76Q354.84-4.88 356.68-3.28Q358.52-1.68 360.76-1.68Z M399.20 0L384.68 0L384.68-0.64L388.92-2.28L388.92-24.20L383.20-24.20L380-17.60L379.36-17.60L379.36-26.40L404.52-26.40L404.52-17.60L403.88-17.60L400.68-24.20L394.96-24.20L394.96-2.28L399.20-0.64L399.20 0Z M423.72 0.40L423.72 0.40Q420.76 0.40 418.24-0.62Q415.72-1.64 413.86-3.46Q412.00-5.28 410.96-7.76Q409.92-10.24 409.92-13.20L409.92-13.20Q409.92-16.16 410.96-18.64Q412.00-21.12 413.86-22.94Q415.72-24.76 418.24-25.78Q420.76-26.80 423.72-26.80L423.72-26.80Q426.72-26.80 429.24-25.78Q431.76-24.76 433.62-22.94Q435.48-21.12 436.52-18.64Q437.56-16.16 437.56-13.20L437.56-13.20Q437.56-10.24 436.52-7.76Q435.48-5.28 433.62-3.46Q431.76-1.64 429.24-0.62Q426.72 0.40 423.72 0.40ZM424.36-1.68L424.36-1.68Q426.36-1.68 427.90-2.96Q429.44-4.24 430.30-6.56Q431.16-8.88 431.16-12L431.16-12Q431.16-15.84 430.10-18.72Q429.04-21.60 427.24-23.18Q425.44-24.76 423.20-24.76L423.20-24.76Q421.20-24.76 419.64-23.50Q418.08-22.24 417.18-19.92Q416.28-17.60 416.28-14.48L416.28-14.48Q416.28-10.64 417.36-7.76Q418.44-4.88 420.28-3.28Q422.12-1.68 424.36-1.68Z M455.72 0L443.28 0L443.28-0.64L446.68-2.28L446.68-24.12L443.28-25.76L443.28-26.40L456.96-26.40Q461.16-26.40 463.58-24.66Q466.00-22.92 466.00-19.88L466.00-19.88Q466.00-17.68 464.52-16.10Q463.04-14.52 460.64-13.60L460.64-13.60L468.04-2.24L470.92-0.64L470.92 0L462.24 0L454.84-12.24L452.72-12.24L452.72-2.32L455.72-0.64L455.72 0ZM454.32-24.20L454.32-24.20L452.72-24.20L452.72-14.20L454.56-14.20Q457.04-14.20 458.48-15.60Q459.92-17 459.92-19.24L459.92-19.24Q459.92-21.60 458.50-22.90Q457.08-24.20 454.32-24.20Z M483.44 0.40L483.44 0.40Q480.80 0.40 478.78-0.14Q476.76-0.68 474.88-1.64L474.88-1.64L474.48-8.40L475.20-8.40L478.04-3.48Q479.12-2.60 480.38-2.12Q481.64-1.64 482.96-1.64L482.96-1.64Q485.12-1.64 486.48-2.66Q487.84-3.68 487.84-5.68L487.84-5.68Q487.84-7.04 487.22-7.92Q486.60-8.80 485.16-9.58Q483.72-10.36 481.20-11.48L481.20-11.48Q478.36-12.72 476.84-14.44Q475.32-16.16 475.32-18.72L475.32-18.72Q475.32-20.32 476.14-21.78Q476.96-23.24 478.34-24.38Q479.72-25.52 481.42-26.16Q483.12-26.80 484.92-26.80L484.92-26.80Q486.96-26.80 488.84-26.32Q490.72-25.84 492.32-24.96L492.32-24.96L492.72-18.56L492.04-18.56L489.24-23.08Q488.20-23.88 487.22-24.30Q486.24-24.72 485-24.72L485-24.72Q483.36-24.72 482.28-23.68Q481.20-22.64 481.20-20.92L481.20-20.92Q481.20-19.28 482.38-18.22Q483.56-17.16 486.48-15.84L486.48-15.84Q490.12-14.16 491.84-12.40Q493.56-10.64 493.56-7.76L493.56-7.76Q493.56-5.20 492.08-3.36Q490.60-1.52 488.28-0.56Q485.96 0.40 483.44 0.40Z"/>
+                </g>
+              </g>
+              <g opacity="1" transform="rotate(0 0 38.623999999999995)">
+                <svg width="151.7511" height="1.6233" x="0" y="38.623999999999995" version="1.1" preserveAspectRatio="none" viewBox="0 0 151.7511 1.6233">
+                  <rect x="0" y="0" width="151.7511" height="1.6233" class="aMG-WEHroEfillColor aMG-WEHroEstrokeColor-str" style="stroke-width:0;" rx="50%" ry="50%"></rect>
+                </svg>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <p class="footer-tagline">Trust And Quality Is What We Serve.</p>
+      </div>
+      
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products & Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Col 3: Contact Info -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-snapshot">
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            <span>+91-9425303085, +91-9300763304</span>
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            <span>deepkamalmotors@gmail.com</span>
+          </p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Plot No. 65, Shahastrabahu Nagar, Jatkhedi Road, Bhopal – 462026, M.P.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="footer-divider">
+    
+    <div class="footer-bottom">
+      &copy; 2026 Deep Kamal Motors, India. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- -----------------------------------------------------------
+       JAVASCRIPT
+       ----------------------------------------------------------- -->
+  <script>
+    // Page Preloader Fade-out when fully loaded
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      preloader.classList.add('fade-out');
+      // Remove from DOM after fade-out transition completes
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 600);
+    });
+
+    // 1. Mobile Drawer Navigation Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileDrawer.classList.toggle('open');
+      const icon = menuToggle.querySelector('i');
+      if (mobileDrawer.classList.contains('open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Close mobile drawer when clicking outside
+    document.addEventListener('click', (e) => {
+      if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && e.target !== menuToggle) {
+        mobileDrawer.classList.remove('open');
+        menuToggle.querySelector('i').className = 'fa-solid fa-bars';
+      }
+    });
+
+    // Close mobile drawer when link is clicked
+    const drawerLinks = mobileDrawer.querySelectorAll('ul a, .btn-quote');
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+        menuToggle.querySelector('i').className = 'fa-solid fa-bars';
+      });
+    });
+
+    // 2. Header scroll styling logic
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // 3. Scroll Reveal intersection observer
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          if (entry.target.classList.contains('product-card')) {
+            // Reset transition delay after the animation completes so hover transitions are instantaneous
+            setTimeout(() => {
+              entry.target.style.transitionDelay = '0s';
+            }, 800);
+          }
+          revealObserver.unobserve(entry.target); // only reveal once
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    });
+    
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Stagger animation delay for product cards dynamically (reduced delay for snappier reveal)
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach((card, idx) => {
+      card.style.transitionDelay = `${idx * 0.015}s`;
+    });
+
+    // 4. Products & Services Tab Filter Logic
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const cards = document.querySelectorAll('.product-card');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle active button
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        cards.forEach((card) => {
+          const category = card.getAttribute('data-category');
+          
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+            // Ensure no transition delay applies during tab filtering for snappy response
+            card.style.transitionDelay = '0s';
+            // Force reflow and animate in
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px) scale(0.95)';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0) scale(1)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px) scale(0.95)';
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 5. Stats Counter Increment Logic
+    const statsSection = document.getElementById('stats');
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let countersStarted = false;
+
+    function startCounters() {
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const stepTime = Math.max(Math.floor(duration / target), 15);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          if (target <= 100) {
+            current += 1;
+          } else if (target <= 600) {
+            current += 5;
+          } else {
+            current += 15;
+          }
+
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          
+          if (target === 2004) {
+            stat.innerText = current;
+          } else {
+            stat.innerText = current + '+';
+          }
+        }, stepTime);
+      });
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countersStarted) {
+          countersStarted = true;
+          startCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    statsObserver.observe(statsSection);
+
+    // 6. Smooth scrolling for internal anchors
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+    allLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          e.preventDefault();
+          const headerHeight = header.offsetHeight;
+          const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // 7. Force-download helper — uses fetch+blob so the file always downloads
+    //    instead of opening in-browser (bypasses server Content-Disposition issues)
+    function forceDownload(filePath, fileName) {
+      fetch(filePath)
+        .then(response => {
+          if (!response.ok) throw new Error('File not found: ' + filePath);
+          return response.blob();
+        })
+        .then(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+          }, 200);
+        })
+        .catch(err => {
+          console.error('Download failed:', err);
+          alert('Sorry, the file could not be downloaded. Please try again.');
+        });
+    }
+
+    // 8. B2B Form Submission Handler (Web3Forms API Integration)
+    function handleInquirySubmit(event) {
+      event.preventDefault();
+      
+      const phoneInput = document.getElementById('form-phone');
+      const phone = phoneInput.value;
+      const digitsOnly = phone.replace(/\D/g, '');
+      
+      // Phone number validation: must be at least 10 digits
+      if (digitsOnly.length < 10) {
+        phoneInput.setCustomValidity('Phone number must be at least 10 digits.');
+        phoneInput.reportValidity();
+        return;
+      } else {
+        phoneInput.setCustomValidity('');
+      }
+
+      const submitBtn = event.target.querySelector('.form-submit-btn');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+
+      const name = document.getElementById('form-name').value;
+      const email = document.getElementById('form-email').value;
+      const company = document.getElementById('form-company').value;
+      const interestSelect = document.getElementById('form-interest');
+      const interest = interestSelect.options[interestSelect.selectedIndex].text;
+      const message = document.getElementById('form-message').value;
+
+      // Web3Forms payload
+      const payload = {
+        access_key: "f6cfa975-fcbd-4028-a28b-de8c415fbf4d",
+        name: name,
+        email: email,
+        phone: phone,
+        company: company || "Not Provided",
+        interest: interest,
+        message: message,
+        from_name: "Deepkamal Motors Website",
+        subject: `New Website Inquiry from ${name}`
+      };
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status === 200 && json.success) {
+          // Hide form and show thank you message
+          document.getElementById('inquiryForm').style.display = 'none';
+          document.getElementById('thankYouMessage').style.display = 'flex';
+        } else {
+          console.error("Web3Forms error:", json);
+          alert(json.message || "Something went wrong. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Submission error:", error);
+        alert("Failed to send inquiry. Please check your internet connection and try again.");
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      });
+    }
+
+    // Reset the inquiry form to allow another submission
+    function resetInquiryForm() {
+      document.getElementById('inquiryForm').reset();
+      document.getElementById('inquiryForm').style.display = 'block';
+      document.getElementById('thankYouMessage').style.display = 'none';
+      
+      // Reset custom validity on phone input
+      const phoneInput = document.getElementById('form-phone');
+      if (phoneInput) {
+        phoneInput.setCustomValidity('');
+      }
+    }
+
+    // Real-time validation for phone number (at least 10 digits)
+    document.addEventListener('DOMContentLoaded', () => {
+      const phoneInput = document.getElementById('form-phone');
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function() {
+          const digits = this.value.replace(/\D/g, '');
+          if (digits.length > 0 && digits.length < 10) {
+            this.setCustomValidity('Phone number must be at least 10 digits.');
+          } else {
+            this.setCustomValidity('');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
