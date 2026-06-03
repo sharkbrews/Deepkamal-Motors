@@ -2731,6 +2731,88 @@
         });
       }
     });
+
+    // VISITOR ANALYTICS TRACKING SYSTEM
+    (function () {
+      const SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL";
+
+      if (SCRIPT_URL === "YOUR_GOOGLE_SCRIPT_URL") return;
+
+      // Do not log local development views
+      if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:") {
+        console.log("Analytics: Local views are not logged.");
+        return;
+      }
+
+      function getDeviceType() {
+        const ua = navigator.userAgent;
+        const isMacTablet = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
+          (ua.includes("Macintosh") && navigator.maxTouchPoints > 1);
+        if (isMacTablet || /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+          return "Tablet";
+        }
+        if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+          return "Mobile";
+        }
+        return "Desktop";
+      }
+
+      function logVisit(country, city) {
+        const payload = {
+          path: window.location.pathname,
+          referrer: document.referrer || "Direct",
+          device: getDeviceType(),
+          country: country || "Unknown",
+          city: city || "Unknown",
+          userAgent: navigator.userAgent
+        };
+
+        fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        }).catch(err => console.error("Analytics error:", err));
+      }
+
+      // Fetch Geolocation with multi-service fallbacks
+      function fetchLocation() {
+        return fetch("https://freeipapi.com/api/json")
+          .then(res => res.json())
+          .then(data => ({
+            country: data.countryName || "Unknown",
+            city: data.cityName || "Unknown"
+          }))
+          .catch(() => {
+            // Fallback 1: ipapi.co
+            return fetch("https://ipapi.co/json/")
+              .then(res => res.json())
+              .then(data => ({
+                country: data.country_name || "Unknown",
+                city: data.city || "Unknown"
+              }))
+              .catch(() => {
+                // Fallback 2: db-ip
+                return fetch("https://api.db-ip.com/v2/free/self")
+                  .then(res => res.json())
+                  .then(data => ({
+                    country: data.countryName || "Unknown",
+                    city: data.city || "Unknown"
+                  }))
+                  .catch(() => ({
+                    country: "Unknown",
+                    city: "Unknown"
+                  }));
+              });
+          });
+      }
+
+      fetchLocation().then(loc => {
+        logVisit(loc.country, loc.city);
+      });
+    })();
   </script>
 </body>
 </html>
