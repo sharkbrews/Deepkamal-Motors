@@ -930,6 +930,287 @@
     }
 
     /* -------------------------------------------------------------
+       HYDRAULIC CYLINDER REPAIRING SECTION
+       ------------------------------------------------------------- */
+    .cylinder-repair {
+      background-color: var(--white);
+      position: relative;
+    }
+
+    .cylinder-repair-top {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .repair-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .repair-img-container {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(4, 43, 101, 0.1);
+      transition: var(--transition-smooth);
+    }
+
+    .repair-img-container::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 100%;
+      height: 100%;
+      border: 3px solid var(--light-gold);
+      border-radius: 16px;
+      z-index: 1;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+
+    .repair-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      position: relative;
+      z-index: 2;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .repair-img-container:hover {
+      transform: translateY(-8px);
+    }
+
+    .repair-img-container:hover::before {
+      transform: translate(8px, -8px);
+    }
+
+    .repair-img-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background-color: var(--primary-navy);
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 3;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border-left: 4px solid var(--light-gold);
+    }
+
+    .repair-img-badge i {
+      font-size: 1.6rem;
+      color: var(--light-gold);
+    }
+
+    .repair-img-badge .badge-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      line-height: 1;
+      letter-spacing: 0.5px;
+    }
+
+    .repair-img-badge .badge-sub {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+
+    .repair-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .repair-content h2 {
+      font-size: 2.8rem;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .repair-lead {
+      font-size: 1.15rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .repair-description {
+      color: #555555;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .capabilities-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 0px;
+      list-style: none;
+    }
+
+    .capabilities-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+    }
+
+    .capabilities-list li i {
+      color: var(--light-gold);
+      font-size: 1.1rem;
+    }
+
+    .repair-products-container {
+      background-color: var(--white);
+      border-radius: 16px;
+      border-top: 2px solid rgba(176, 158, 128, 0.15);
+      padding-top: 50px;
+      margin-top: 30px;
+    }
+
+    .repair-products-title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.45rem;
+      color: var(--primary-navy);
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .repair-products-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 20%;
+      width: 60%;
+      height: 3px;
+      background-color: var(--light-gold);
+      border-radius: 2px;
+    }
+
+    .repair-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .repair-product-card {
+      background-color: var(--white);
+      border: 1px solid rgba(4, 43, 101, 0.08);
+      border-left: 4px solid var(--light-gold);
+      border-radius: 12px;
+      padding: 24px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+    }
+
+    .repair-product-card.featured {
+      grid-column: span 3;
+      border-left: 5px solid var(--light-gold);
+      padding: 32px;
+      align-items: center;
+      box-shadow: 0 8px 25px rgba(4, 43, 101, 0.05);
+    }
+
+    .repair-product-card h3 {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.3;
+      margin-bottom: 4px;
+      transition: var(--transition-fast);
+    }
+
+    .repair-product-card.featured h3 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .product-card-details {
+      flex-grow: 1;
+    }
+
+    .repair-product-card.featured p {
+      color: #555555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 100%;
+    }
+
+    .repair-product-card .product-icon {
+      width: 46px;
+      height: 46px;
+      background-color: rgba(176, 158, 128, 0.12);
+      color: var(--accent-gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .repair-product-card.featured .product-icon {
+      width: 64px;
+      height: 64px;
+      font-size: 1.8rem;
+      background-color: rgba(176, 158, 128, 0.15);
+      color: var(--accent-gold);
+    }
+
+    .product-card-desc {
+      font-size: 0.8rem;
+      color: #666666;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .repair-product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(4, 43, 101, 0.08);
+      border-left-color: var(--primary-navy);
+      border-color: rgba(4, 43, 101, 0.15);
+    }
+
+    .repair-product-card:hover .product-icon {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    .repair-product-card:hover h3 {
+      color: var(--accent-gold);
+    }
+
+    /* -------------------------------------------------------------
        INDUSTRIES WE SERVE
        ------------------------------------------------------------- */
     .industries {
@@ -1455,6 +1736,16 @@
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .cylinder-repair-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .repair-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .repair-product-card.featured {
+        grid-column: span 2;
+      }
       .industries-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1467,6 +1758,29 @@
     @media (max-width: 768px) {
       .section-padding {
         padding: 70px 20px;
+      }
+
+      /* Cylinder Repair Mobile styling */
+      .repair-content h2 {
+        font-size: 2.2rem;
+      }
+      .repair-products-grid {
+        grid-template-columns: 1fr;
+      }
+      .repair-product-card.featured {
+        grid-column: span 1;
+      }
+      .capabilities-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .repair-img-container {
+        max-width: calc(100% - 20px);
+        margin: 0 0 0 20px;
+      }
+      .repair-img-badge {
+        right: -10px;
+        bottom: -15px;
       }
 
       /* Navbar */
@@ -1763,6 +2077,7 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#products">Products & Services</a></li>
+        <li><a href="#cylinder-repair">Cylinder Repair</a></li>
         <li><a href="#industries">Industries</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -1781,6 +2096,7 @@
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#products">Products & Services</a></li>
+      <li><a href="#cylinder-repair">Cylinder Repair</a></li>
       <li><a href="#industries">Industries</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -2038,6 +2354,135 @@
           <a href="#" class="btn-gold-brochure" onclick="forceDownload('Deepkamal Motors Brochure.pdf', 'Deepkamal Motors Brochure.pdf'); return false;">
             <i class="fa-solid fa-download"></i> Download Full Brochure
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------
+         SECTION 5.5: DEDICATED HYDRAULIC CYLINDER REPAIRING
+         ----------------------------------------------------------- -->
+    <section class="cylinder-repair section-padding reveal" id="cylinder-repair">
+      <div class="container">
+        <!-- Top part: Image on the left, text on the right -->
+        <div class="cylinder-repair-top">
+          <!-- Left Column: Repair Image Visual with Gold Border Offset & Badge -->
+          <div class="repair-visual">
+            <div class="repair-img-container">
+              <img src="cylinder_repair.png" alt="Deepkamal Motors Cylinder Repair Workshop" class="repair-img">
+              <div class="repair-img-badge">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <div>
+                  <p class="badge-title">EXPERT REBUILDS</p>
+                  <p class="badge-sub">Honing, Chroming & Seals</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Text details -->
+          <div class="repair-content">
+            <span class="label-gold">Specialized Services</span>
+            <h2>Hydraulic Cylinder Repairing</h2>
+            <p class="repair-lead">
+              Minimize downtime and restore your fluid power systems to OEM specifications.
+            </p>
+            <p class="repair-description">
+              At Deepkamal Motors, we specialize in high-precision repairs and complete refurbishment of hydraulic and pneumatic cylinders. Backed by 20+ years of industrial expertise, we inspect, diagnose, and rebuild cylinders of all sizes and capacities. Our workshop utilizes premium dynamic sealing systems and advanced testing equipment to ensure long-lasting durability in demanding fields like construction, cement plants, and mining.
+            </p>
+            
+            <ul class="capabilities-list">
+              <li><i class="fa-solid fa-circle-check"></i> Precision Honing & Re-tubing</li>
+              <li><i class="fa-solid fa-circle-check"></i> Hard Chrome Rod Plating</li>
+              <li><i class="fa-solid fa-circle-check"></i> Custom Dynamic Seals Fitment</li>
+              <li><i class="fa-solid fa-circle-check"></i> Rigorous Hydrostatic Testing</li>
+              <li><i class="fa-solid fa-circle-check"></i> Rod Straightening & Machining</li>
+              <li><i class="fa-solid fa-circle-check"></i> 100% Quality Assurance</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom part: Components We Service & Restore shifted below and centered -->
+        <div class="repair-products-container">
+          <h3 class="repair-products-title">Components We Service & Restore</h3>
+          
+          <div class="repair-products-grid">
+            <!-- 1. Hydraulic Cylinders (Featured Showcase) -->
+            <div class="repair-product-card featured">
+              <div class="product-icon">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <div class="product-card-details">
+                <h3>Hydraulic Cylinders</h3>
+                <p>Complete cylinder rebuilding: honing, rod re-chroming, new seals fitment, and hydrostatic testing to original OEM standards.</p>
+              </div>
+            </div>
+
+            <!-- 2. Piston Accumulators -->
+            <div class="repair-product-card">
+              <div class="product-icon">
+                <i class="fa-solid fa-battery-three-quarters"></i>
+              </div>
+              <div>
+                <h3>Piston Accumulators</h3>
+                <p class="product-card-desc">Bladder refitting & nitrogen charging</p>
+              </div>
+            </div>
+
+            <!-- 3. Hydraulic Torque Wrenches -->
+            <div class="repair-product-card">
+              <div class="product-icon">
+                <i class="fa-solid fa-wrench"></i>
+              </div>
+              <div>
+                <h3>Hydraulic Torque Wrenches</h3>
+                <p class="product-card-desc">Calibration & seal kit refurbishment</p>
+              </div>
+            </div>
+
+            <!-- 4. Manifold Blocks & Flow Dividers -->
+            <div class="repair-product-card">
+              <div class="product-icon">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <div>
+                <h3>Manifold Blocks & Flow Dividers</h3>
+                <p class="product-card-desc">Chamber cleaning & valve seat repair</p>
+              </div>
+            </div>
+
+            <!-- 5. Hydraulic Jacks & Pumps -->
+            <div class="repair-product-card">
+              <div class="product-icon">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+              <div>
+                <h3>Hydraulic Jacks & Pumps</h3>
+                <p class="product-card-desc">10T to 1000T load standard testing</p>
+              </div>
+            </div>
+
+            <!-- 6. Pumps -->
+            <div class="repair-product-card">
+              <div class="product-icon">
+                <i class="fa-solid fa-arrows-spin"></i>
+              </div>
+              <div>
+                <h3>Pumps</h3>
+                <p class="product-card-desc">Piston, vane & gear pump overhaul</p>
+              </div>
+            </div>
+
+            <!-- 7. Hydraulic Power Pack -->
+            <div class="repair-product-card">
+              <div class="product-icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div>
+                <h3>Hydraulic Power Packs</h3>
+                <p class="product-card-desc">Motor tune-up & solenoid diagnostic</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2387,6 +2832,7 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#products">Products & Services</a></li>
+          <li><a href="#cylinder-repair">Cylinder Repair</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
