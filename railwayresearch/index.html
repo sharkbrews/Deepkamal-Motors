@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Railways: Market Intelligence & Procurement Dashboard</title>
+  <meta name="description" content="Strategic market entry dashboard for hydraulic equipment and seal-kit suppliers targeting Indian Railways: 18 zones, 70 divisions, procurement workflows, and buyer designations.">
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS for Interactive India Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="brand-wrapper">
+        <span class="brand-logo-badge">IR-HYD</span>
+        <div class="brand-title-group">
+          <h1>Indian Railways Hydraulic Market Entry</h1>
+          <p>Commercial Opportunity & Procurement Intelligence for Hydraulic Seal-Kits & Spares</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-open-glossary-modal" class="btn-icon" title="View abbreviations and terms">
+          📖 Glossary
+        </button>
+        <button id="theme-toggle-btn" class="btn-icon" aria-label="Toggle theme">
+          <span id="theme-icon">🌙 Dark</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Navigation Links -->
+    <nav class="nav-bar">
+      <ul class="nav-links">
+        <li><a href="#hero-section" class="active">Overview</a></li>
+        <li><a href="#map-section">18-Zone Map</a></li>
+        <li><a href="#explorer-section">Zone Explorer</a></li>
+        <li><a href="#org-section">Org Hierarchy</a></li>
+        <li><a href="#hydraulics-section">Hydraulic Needs</a></li>
+        <li><a href="#procurement-section">How to Sell</a></li>
+        <li><a href="#contacts-section">Who to Contact</a></li>
+        <li><a href="#roadmap-section">Roadmap</a></li>
+        <li><a href="#glossary-section">Glossary</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Verification Note Alert Banner -->
+  <aside class="verification-alert-banner" aria-label="Data verification disclaimer">
+    <div class="alert-content">
+      <span>🛡️</span>
+      <div>
+        <strong>Data Integrity Notice:</strong> All data is strictly sourced from verified desk research dated <strong>8 October 2026</strong>. No figures, officer names or phone numbers are invented. Badges indicate verified sources (<span class="badge-tag src" style="margin: 0 2px;">[SRC]</span>) versus general industry practice (<span class="badge-tag know" style="margin: 0 2px;">[KNOW]</span>).
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Layout -->
+  <main class="main-wrapper">
+
+    <!-- ====================================================================
+         1. HERO SECTION
+         ==================================================================== -->
+    <section id="hero-section" class="dashboard-section hero-section">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>🚂 Strategic Opportunity Blueprint</span>
+          <span>• Research Date: 8 Oct 2026</span>
+        </div>
+        <h2 class="hero-title">Indian Railways: Market Entry for Hydraulic Equipment Suppliers</h2>
+        <p class="hero-subtitle">
+          A targeted operational guide for a hydraulic seal-kit and spare-parts business (JCB equipment background) to understand network hierarchy, where jacks and cylinders are deployed, and how to win tenders.
+        </p>
+        <span class="hero-audience-tag">
+          🎯 Designed for Business Owners & Family Decision-Makers (Non-Technical & Executive Overview)
+        </span>
+      </div>
+
+      <!-- 4 Key Stat Cards -->
+      <div class="stat-cards-grid" id="hero-stats-grid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. INTERACTIVE INDIA MAP
+         ==================================================================== -->
+    <section id="map-section" class="dashboard-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>
+            <span>🗺️</span> 18 Zonal Railways: Interactive Network Map
+          </h2>
+          <p>
+            Explore all 18 zone headquarters, establishment dates, and operational divisions across India.
+            <span class="badge-tag src">[SRC]</span>
+          </p>
+        </div>
+        <div class="section-actions">
+          <button id="map-reset-btn" class="btn-secondary">↺ Reset View</button>
+        </div>
+      </div>
+
+      <div class="map-layout">
+        <!-- Left: Map Container -->
+        <div class="map-container-box">
+          <div class="map-controls-bar">
+            <div class="search-input-wrap">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="map-search-input" placeholder="Search zone name, code, HQ, or division..." aria-label="Search zones">
+            </div>
+            <select id="map-div-filter" class="filter-select" aria-label="Filter by divisions count">
+              <option value="all">Filter: All Division Counts</option>
+              <option value="6">6 Divisions (SR, WR, NR)</option>
+              <option value="5">5 Divisions (CR, NFR, ECR)</option>
+              <option value="4">4 Divisions (ER, SER, NWR, SCoR)</option>
+              <option value="3">3 Divisions (NER, SCR, ECoR, NCR, SECR, SWR, WCR)</option>
+              <option value="0">0 Divisions (Metro Railway Kolkata)</option>
+            </select>
+          </div>
+
+          <div id="railway-map" role="region" aria-label="Interactive Map of 18 Indian Railway Zones"></div>
+        </div>
+
+        <!-- Right: Detail Sidebar Panel -->
+        <div class="map-sidebar-panel">
+          <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">
+            Selected Zonal Profile
+          </div>
+          <div id="map-selected-zone-display">
+            <!-- Rendered by js/app.js -->
+          </div>
+
+          <div style="margin-top:0.75rem;">
+            <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.35rem;">
+              Quick Zone Directory (Click to Pan)
+            </div>
+            <div class="quick-zones-list" id="map-quick-zones-list">
+              <!-- Rendered by js/app.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Things That Confuse People (Nuances Box) -->
+      <div class="confusions-banner">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h3 style="font-size:1rem; color:var(--navy-900); display:flex; align-items:center; gap:0.4rem;">
+            <span>💡</span> Common Railway Structure Confusions (Section 3)
+          </h3>
+          <span class="badge-tag src">[SRC] Verified Facts</span>
+        </div>
+        <div class="confusions-grid" id="confusions-grid-container">
+          <!-- Rendered dynamically by js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. ZONE-TO-DIVISION EXPLORER
+         ==================================================================== -->
+    <section id="explorer-section" class="dashboard-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>
+            <span>🌳</span> Zone-to-Division Hierarchy Explorer
+          </h2>
+          <p>
+            Complete breakdown: Indian Railways &gt; 18 Zones &gt; ~70 Operating Divisions. Expand nodes to view local divisions.
+          </p>
+        </div>
+        <div class="section-actions">
+          <div class="view-tabs">
+            <button id="btn-view-tree" class="view-tab-btn active">Collapsible Tree</button>
+            <button id="btn-view-sunburst" class="view-tab-btn">Sunburst Chart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="explorer-controls">
+        <div class="search-input-wrap" style="max-width: 320px;">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="tree-search-input" placeholder="Search zone or division name..." aria-label="Search hierarchy">
+        </div>
+        <div class="tree-actions">
+          <button id="tree-expand-all" class="btn-secondary">Expand All</button>
+          <button id="tree-collapse-all" class="btn-secondary">Collapse All</button>
+        </div>
+      </div>
+
+      <!-- View 1: Collapsible Tree Grid -->
+      <div id="tree-view-container" class="tree-container">
+        <div class="tree-root-node">
+          <span>🇮🇳 Indian Railways (Apex Network)</span>
+          <span class="tree-root-badge">18 Zones • 70 Operating Divisions</span>
+        </div>
+        <div class="tree-zones-grid" id="tree-zones-container">
+          <!-- Rendered dynamically by js/app.js -->
+        </div>
+      </div>
+
+      <!-- View 2: Sunburst Radial Chart View -->
+      <div id="sunburst-view-container">
+        <h3 style="font-size:1.1rem; color:var(--navy-900); margin-bottom:0.25rem;">
+          Concentric Sunburst Chart: Indian Railways Hierarchy
+        </h3>
+        <p id="sunburst-caption" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;"></p>
+        <canvas id="sunburst-canvas"></canvas>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. ORG CHART (WHO BUYS WHAT)
+         ==================================================================== -->
+    <section id="org-section" class="dashboard-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>
+            <span>🏛️</span> Organizational Hierarchy & Buyer Influence Map
+          </h2>
+          <p>
+            Ministry &gt; Railway Board &gt; Zonal GM &gt; Divisional DRM &gt; Stores Depots &amp; Maintenance Workshops.
+            <span class="badge-tag src">[SRC] Section 2 &amp; 6.4</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="org-chart-wrap" id="org-hierarchy-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+
+      <!-- Production Units reporting directly to Board -->
+      <div id="org-pu-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. WHERE HYDRAULICS ARE USED
+         ==================================================================== -->
+    <section id="hydraulics-section" class="dashboard-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>
+            <span>⚙️</span> Where Hydraulics Are Used &amp; Product-Market Fit
+          </h2>
+          <p>
+            Application breakdown from Section 5 paired with commercial fit ratings for a seal-kit and jack parts business (Section 8.1).
+          </p>
+        </div>
+      </div>
+
+      <div class="filter-tags-bar">
+        <button class="filter-pill-btn active" data-filter="all">All Applications (7)</button>
+        <button class="filter-pill-btn" data-filter="top">★ Top Fit: Very High (Seal Kits & ART)</button>
+        <button class="filter-pill-btn" data-filter="workshop">Workshops & Rolling Stock</button>
+        <button class="filter-pill-btn" data-filter="track">Track & Civil Maintenance</button>
+        <button class="filter-pill-btn" data-filter="pu">Manufacturing & PUs</button>
+        <div class="search-input-wrap" style="max-width: 250px; margin-left:auto;">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="hydraulic-search-input" placeholder="Filter items or users..." aria-label="Search applications">
+        </div>
+      </div>
+
+      <div class="hydraulic-cards-grid" id="hydraulic-cards-grid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+
+      <!-- Live Tender Case Studies Box -->
+      <div id="tender-showcase-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. HOW TO SELL (PROCUREMENT FLOW)
+         ==================================================================== -->
+    <section id="procurement-section" class="dashboard-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>
+            <span>📋</span> How Procurement Works: Step-by-Step Supplier Journey
+          </h2>
+          <p>
+            From GeM / IREPS registration and RDSO vendor approval to tender bidding and decentralised zone expansion (Section 7).
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 Steps Flow -->
+      <div class="flow-timeline" id="procurement-flow-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+
+      <!-- Document Readiness Checklist -->
+      <div class="docs-checklist-container" id="docs-checklist-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. WHO TO CONTACT (ROLE-BASED LOOKUP)
+         ==================================================================== -->
+    <section id="contacts-section" class="dashboard-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>
+            <span>👤</span> Who to Contact: Role-Based Decision Tool
+          </h2>
+          <p>
+            Select your commercial objective to identify the exact official designation to approach (Section 6.4).
+            <span class="badge-tag src">[SRC] Official Designations</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="role-lookup-wrapper">
+        <div class="role-selector-bar">
+          <label for="role-goal-select">What is your specific commercial objective?</label>
+          <select id="role-goal-select" class="role-select-input" aria-label="Select your commercial objective">
+            <!-- Populated dynamically by js/app.js -->
+          </select>
+        </div>
+
+        <div id="role-result-display">
+          <!-- Rendered dynamically by js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. ROADMAP (PHASED TIMELINE)
+         ==================================================================== -->
+    <section id="roadmap-section" class="dashboard-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>
+            <span>🚀</span> Execution Roadmap: Suggested Phased Plan
+          </h2>
+          <p>
+            Structured timeline from Week 1 setup to Year 2 multi-zone expansion (Section 9). Check off milestones with your family.
+          </p>
+        </div>
+      </div>
+
+      <div class="roadmap-timeline-grid" id="roadmap-timeline-grid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         9. GLOSSARY OF ABBREVIATIONS
+         ==================================================================== -->
+    <section id="glossary-section" class="dashboard-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2>
+            <span>📖</span> Glossary of Railway Terms &amp; Abbreviations
+          </h2>
+          <p>
+            Essential acronyms from Section 10 (ART, HRE, PCMM, DRM, RDSO, IREPS, GeM, etc.) decoded for non-technical readers.
+          </p>
+        </div>
+        <div class="section-actions">
+          <div class="search-input-wrap" style="min-width: 220px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="glossary-search-input" placeholder="Search abbreviation..." aria-label="Search glossary">
+          </div>
+        </div>
+      </div>
+
+      <div class="glossary-grid" id="glossary-grid-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Dialog for Glossary Quick Lookup -->
+  <div id="glossary-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="glossary-modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="glossary-modal-title" style="font-size:1.25rem; color:var(--navy-900);">Railway Acronyms Quick Reference</h3>
+        <button id="btn-close-glossary-modal" class="btn-close" aria-label="Close glossary modal">&times;</button>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:1rem;">
+        Click outside or press the close button to return to the dashboard.
+      </p>
+      <div id="modal-glossary-content" style="display:flex; flex-direction:column; gap:0.6rem; max-height:60vh; overflow-y:auto;">
+        <!-- Populated dynamically by js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top-btn" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- Sticky Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-disclaimer-card">
+        <strong>⚠️ Verification Notice &amp; Disclaimer</strong>
+        <p>
+          Last updated 8 Oct 2026. Verify before acting. Desk research for planning purposes. Confirm all tender rules, vendor registration requirements, thresholds and officer details on official Indian Railways, GeM, IREPS, RDSO and MSME sources before making commercial commitments.
+        </p>
+      </div>
+
+      <div class="footer-meta">
+        <div>
+          <strong>Indian Railways Market Research Dashboard</strong> • Prepared for Hydraulic Seal-Kit &amp; Spare-Parts Business
+        </div>
+        <div style="display:flex; gap:1rem; align-items:center;">
+          <span>Confidence: <span class="badge-tag src">[SRC] Verified</span> <span class="badge-tag know">[KNOW] Needs Verification</span></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Data Store (Strictly extracted from indian_railways_market_research.md) -->
+  <script src="js/data.js"></script>
+  <!-- Application Controller -->
+  <script src="js/app.js"></script>
+</body>
+</html>
